@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8"/>
@@ -20,12 +21,12 @@ html{scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s}
 
 /* NOTICE */
-.notice{background:linear-gradient(90deg,var(--mr),var(--ma));color:#fff;text-align:center;font-size:12px;padding:8px 40px;position:relative;z-index:250}
+.notice{background:linear-gradient(90deg,var(–mr),var(–ma));color:#fff;text-align:center;font-size:12px;padding:8px 40px;position:relative;z-index:250}
 .notice a{color:#ffd4a0;text-decoration:none;font-weight:700;margin-left:6px}
 .notice-x{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:18px;padding:0 6px}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:200;background:var(--nav);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:56px;border-bottom:1px solid rgba(155,32,53,.2)}
+nav{position:sticky;top:0;z-index:200;background:var(–nav);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:56px;border-bottom:1px solid rgba(155,32,53,.2)}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-logo{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(155,32,53,.6);display:flex;align-items:center;justify-content:center;background:rgba(155,32,53,.1)}
 .nav-logo svg{width:28px;height:28px}
@@ -38,156 +39,156 @@ nav{position:sticky;top:0;z-index:200;background:var(--nav);backdrop-filter:blur
 .icon-btn{width:34px;height:34px;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,.2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);transition:background .2s}
 .icon-btn:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
 .icon-btn svg{width:15px;height:15px}
-.icon-btn.danger{background:var(--mb);border-color:var(--mb);display:none}
+.icon-btn.danger{background:var(–mb);border-color:var(–mb);display:none}
 .icon-btn.danger:hover{background:#8f1f38}
 .icon-btn.danger.vis{display:flex}
 .admin-dot{width:7px;height:7px;border-radius:50%;background:#f6c90e;display:none;flex-shrink:0}
 .admin-dot.vis{display:inline-block}
 /* role dropdown */
 .role-wrap{position:relative}
-.role-btn{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);padding:6px 12px;border-radius:6px;font-size:13px;font-family:'Lato',sans-serif;cursor:pointer;transition:.2s;white-space:nowrap}
+.role-btn{display:flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);padding:6px 12px;border-radius:6px;font-size:13px;font-family:‘Lato’,sans-serif;cursor:pointer;transition:.2s;white-space:nowrap}
 .role-btn:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06)}
 .role-btn svg{width:13px;height:13px}
 .role-dd{display:none;position:absolute;top:calc(100% + 6px);right:0;background:#1e0009;border:1px solid rgba(155,32,53,.3);border-radius:8px;overflow:hidden;min-width:148px;box-shadow:0 8px 24px rgba(0,0,0,.5);z-index:300}
 .role-dd.open{display:block}
 .role-opt{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;font-size:13px;color:rgba(255,255,255,.8);cursor:pointer;transition:background .15s;gap:8px}
 .role-opt:hover{background:rgba(255,255,255,.06)}
-.role-opt.sel{background:var(--mr);color:#fff}
+.role-opt.sel{background:var(–mr);color:#fff}
 .role-opt .chk{width:14px;height:14px;opacity:0;flex-shrink:0}
 .role-opt.sel .chk{opacity:1}
 
 /* HERO */
 .hero{background:radial-gradient(ellipse at 50% 0%,#3a0a18 0%,#1a0008 45%,#0e0005 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(155,32,53,.08) 0%,transparent 65%);pointer-events:none}
-.hero-crest{width:90px;height:90px;border-radius:50%;border:2px solid rgba(155,32,53,.5);display:flex;align-items:center;justify-content:center;background:rgba(155,32,53,.08);margin-bottom:28px;box-shadow:0 0 40px rgba(155,32,53,.15)}
-.hero-crest svg{width:70px;height:70px}
+.hero::before{content:’’;position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(155,32,53,.08) 0%,transparent 65%);pointer-events:none}
+.hero-crest{width:140px;height:140px;border-radius:50%;border:2px solid rgba(155,32,53,.5);display:flex;align-items:center;justify-content:center;background:rgba(155,32,53,.08);margin-bottom:28px;box-shadow:0 0 60px rgba(155,32,53,.2)}
+.hero-crest svg{width:116px;height:116px}
 .hero-badge{display:inline-block;border:1px solid rgba(155,32,53,.6);color:rgba(240,232,224,.7);font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:28px}
-.hero-h{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,62px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:18px;max-width:720px}
+.hero-h{font-family:‘Playfair Display’,serif;font-size:clamp(34px,5vw,62px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:18px;max-width:720px}
 .hero-h .acc{font-style:italic;color:#c0394f}
 .hero-sub{color:rgba(240,232,224,.55);font-size:15px;line-height:1.6;max-width:420px;margin-bottom:40px}
-.hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--mb);color:#fff;padding:13px 28px;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s,transform .2s;letter-spacing:.02em}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(–mb);color:#fff;padding:13px 28px;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s,transform .2s;letter-spacing:.02em}
 .hero-cta:hover{background:#8f1f38;transform:translateY(-1px)}
 .hero-cta svg{width:16px;height:16px}
 .arrow-circle{width:20px;height:20px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center}
 .hero-div{width:40px;height:1px;background:rgba(155,32,53,.4);margin:52px auto 40px}
 .hero-stats{display:flex;align-items:center;gap:56px}
 .stat-item{text-align:center}
-.stat-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;display:block;line-height:1}
+.stat-n{font-family:‘Playfair Display’,serif;font-size:36px;font-weight:700;color:#fff;display:block;line-height:1}
 .stat-l{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,232,224,.4);display:block;margin-top:6px}
 
 /* RECENT STRIP */
-.recent-strip{background:var(--card);border-bottom:1px solid var(--border);padding:16px 0}
+.recent-strip{background:var(–card);border-bottom:1px solid var(–border);padding:16px 0}
 .recent-inner{max-width:900px;margin:0 auto;padding:0 24px}
-.recent-lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ma);font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:7px}
-.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--ma);animation:pulse 2s ease-in-out infinite;flex-shrink:0}
+.recent-lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(–ma);font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(–ma);animation:pulse 2s ease-in-out infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.65)}}
 .recent-row{display:flex;gap:8px;flex-wrap:wrap}
-.recent-pill{display:inline-flex;align-items:center;gap:7px;background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:5px 12px 5px 5px;cursor:pointer;transition:border-color .15s;text-decoration:none}
+.recent-pill{display:inline-flex;align-items:center;gap:7px;background:var(–bg);border:1px solid var(–border);border-radius:20px;padding:5px 12px 5px 5px;cursor:pointer;transition:border-color .15s;text-decoration:none}
 .recent-pill:hover{border-color:rgba(155,32,53,.4)}
 .rp-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .rp-icon.paper{background:#f0fbf4;color:#2a7a50}
 .rp-icon.marking{background:#fff8e6;color:#8a6400}
 .rp-icon svg{width:11px;height:11px}
-.rp-text{font-size:11.5px;color:var(--text2);line-height:1.2}
-.rp-text strong{display:block;font-size:12px;color:var(--text);font-weight:700}
+.rp-text{font-size:11.5px;color:var(–text2);line-height:1.2}
+.rp-text strong{display:block;font-size:12px;color:var(–text);font-weight:700}
 
 /* BROWSE */
-.browse{background:var(--bg);padding:60px 0 80px}
+.browse{background:var(–bg);padding:60px 0 80px}
 .browse-wrap{max-width:900px;margin:0 auto;padding:0 24px}
 .browse-hdr{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-.browse-hdr h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text)}
-.browse-hdr p{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-top:4px}
-.underline{width:36px;height:2px;background:var(--ma);margin-top:8px}
-.kbd-hint{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:5px}
-.kbd{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:2px 7px;font-size:11px;font-family:monospace;color:var(--text2)}
+.browse-hdr h2{font-family:‘Playfair Display’,serif;font-size:28px;font-weight:700;color:var(–text)}
+.browse-hdr p{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(–text3);margin-top:4px}
+.underline{width:36px;height:2px;background:var(–ma);margin-top:8px}
+.kbd-hint{font-size:11px;color:var(–text3);display:flex;align-items:center;gap:5px}
+.kbd{background:var(–bg);border:1px solid var(–border);border-radius:4px;padding:2px 7px;font-size:11px;font-family:monospace;color:var(–text2)}
 /* search */
 .search-wrap{position:relative;margin-bottom:8px}
 .search-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#aaa;width:16px;height:16px;pointer-events:none}
 .search-clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#bbb;font-size:18px;display:none;padding:0 4px;line-height:1}
 .search-clear.vis{display:block}
-.search-in{width:100%;border:1px solid var(--border);border-radius:10px;padding:13px 36px 13px 42px;font-size:14px;font-family:'Lato',sans-serif;color:var(--text);background:var(--card);outline:none;transition:border-color .2s,box-shadow .2s}
-.search-in:focus{border-color:var(--ma);box-shadow:0 0 0 3px rgba(155,32,53,.08)}
+.search-in{width:100%;border:1px solid var(–border);border-radius:10px;padding:13px 36px 13px 42px;font-size:14px;font-family:‘Lato’,sans-serif;color:var(–text);background:var(–card);outline:none;transition:border-color .2s,box-shadow .2s}
+.search-in:focus{border-color:var(–ma);box-shadow:0 0 0 3px rgba(155,32,53,.08)}
 .search-in::placeholder{color:#bbb}
-.hints{font-size:12px;color:var(--text3);margin-bottom:28px}
-.hints span{color:var(--ma);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.hints{font-size:12px;color:var(–text3);margin-bottom:28px}
+.hints span{color:var(–ma);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 /* steps */
 .step{margin-bottom:8px;animation:fup .2s ease both}
 @keyframes fup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.step-lbl{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);font-weight:700;margin-bottom:12px}
-.step-n{width:22px;height:22px;border-radius:50%;background:var(--ma);color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-lbl{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(–text3);font-weight:700;margin-bottom:12px}
+.step-n{width:22px;height:22px;border-radius:50%;background:var(–ma);color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 /* grade cards */
-.grade-section-lbl{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);font-weight:700;margin-bottom:10px;margin-top:4px}
+.grade-section-lbl{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(–text3);font-weight:700;margin-bottom:10px;margin-top:4px}
 .grade-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:10px;margin-bottom:20px}
-.g-card{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:18px 12px 16px;cursor:pointer;text-align:center;transition:border-color .18s,background .18s,box-shadow .18s;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:'Lato',sans-serif}
+.g-card{background:var(–card);border:1.5px solid var(–border);border-radius:12px;padding:18px 12px 16px;cursor:pointer;text-align:center;transition:border-color .18s,background .18s,box-shadow .18s;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:‘Lato’,sans-serif}
 .g-card:hover{border-color:rgba(155,32,53,.35);box-shadow:0 2px 12px rgba(107,20,40,.08)}
-.g-card.active{border-color:var(--ma);background:rgba(155,32,53,.05);box-shadow:0 2px 14px rgba(155,32,53,.14)}
-.g-card-num{width:40px;height:40px;border-radius:8px;background:var(--mr);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;transition:background .18s}
-.g-card.active .g-card-num{background:var(--ma)}
-.g-card-name{font-size:13px;font-weight:700;color:var(--text);line-height:1}
+.g-card.active{border-color:var(–ma);background:rgba(155,32,53,.05);box-shadow:0 2px 14px rgba(155,32,53,.14)}
+.g-card-num{width:40px;height:40px;border-radius:8px;background:var(–mr);display:flex;align-items:center;justify-content:center;font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700;color:#fff;transition:background .18s}
+.g-card.active .g-card-num{background:var(–ma)}
+.g-card-name{font-size:13px;font-weight:700;color:var(–text);line-height:1}
 .g-card-cnt{display:none}
 /* breadcrumb */
-.bc{display:flex;align-items:center;gap:6px;margin-bottom:20px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:9px 14px;flex-wrap:wrap}
-.bc-btn{background:none;border:none;font-size:13px;font-family:'Lato',sans-serif;color:var(--ma);cursor:pointer;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:2px}
-.bc-cur{font-size:13px;color:var(--text2);font-weight:700}
-.bc-sep{color:var(--border);font-size:14px}
+.bc{display:flex;align-items:center;gap:6px;margin-bottom:20px;background:var(–card);border:1px solid var(–border);border-radius:8px;padding:9px 14px;flex-wrap:wrap}
+.bc-btn{background:none;border:none;font-size:13px;font-family:‘Lato’,sans-serif;color:var(–ma);cursor:pointer;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.bc-cur{font-size:13px;color:var(–text2);font-weight:700}
+.bc-sep{color:var(–border);font-size:14px}
 /* stream grid */
 .stream-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-.stream-card{border:1.5px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;background:var(--card);transition:.18s;position:relative;overflow:hidden}
-.stream-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--mr),var(--ma));opacity:0;transition:opacity .2s}
+.stream-card{border:1.5px solid var(–border);border-radius:10px;padding:16px 18px;cursor:pointer;background:var(–card);transition:.18s;position:relative;overflow:hidden}
+.stream-card::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(–mr),var(–ma));opacity:0;transition:opacity .2s}
 .stream-card:hover{border-color:rgba(155,32,53,.4);box-shadow:0 4px 16px rgba(107,20,40,.1);transform:translateY(-1px)}
 .stream-card:hover::before{opacity:1}
-.sc-tag{display:inline-block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(155,32,53,.08);color:var(--ma);border-radius:4px;padding:2px 7px;margin-bottom:8px;font-weight:700}
-.sc-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
-.sc-cnt{font-size:12px;color:var(--text3)}
+.sc-tag{display:inline-block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(155,32,53,.08);color:var(–ma);border-radius:4px;padding:2px 7px;margin-bottom:8px;font-weight:700}
+.sc-name{font-size:14px;font-weight:700;color:var(–text);margin-bottom:3px}
+.sc-cnt{font-size:12px;color:var(–text3)}
 /* subject grid */
 .subj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:8px}
-.subj-card{border:1px solid var(--border);border-radius:8px;padding:12px 16px;cursor:pointer;background:var(--card);transition:.18s;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.subj-card{border:1px solid var(–border);border-radius:8px;padding:12px 16px;cursor:pointer;background:var(–card);transition:.18s;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .subj-card:hover{border-color:rgba(155,32,53,.35);background:rgba(155,32,53,.03)}
-.subj-card.active{background:var(--mr);border-color:var(--mr);color:#fff}
-.subj-name{font-size:13px;font-weight:700;color:var(--text);line-height:1.3}
+.subj-card.active{background:var(–mr);border-color:var(–mr);color:#fff}
+.subj-name{font-size:13px;font-weight:700;color:var(–text);line-height:1.3}
 .subj-card.active .subj-name{color:#fff}
-.subj-cnt{font-size:11px;color:var(--text3);white-space:nowrap}
+.subj-cnt{font-size:11px;color:var(–text3);white-space:nowrap}
 .subj-card.active .subj-cnt{color:rgba(255,255,255,.65)}
 /* toolbar */
-.toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;background:var(–card);border:1px solid var(–border);border-radius:10px;padding:12px 16px}
 .tb-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .tb-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.cnt-lbl{font-size:13px;font-weight:700;color:var(--text)}
-.yr-range{font-size:12px;color:var(--text3)}
+.cnt-lbl{font-size:13px;font-weight:700;color:var(–text)}
+.yr-range{font-size:12px;color:var(–text3)}
 .fg{display:flex;align-items:center;gap:6px}
-.fg label{font-size:11px;color:var(--text3);white-space:nowrap;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.fg label{font-size:11px;color:var(–text3);white-space:nowrap;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .sel-w{position:relative}
-.sel-w::after{content:'';position:absolute;right:8px;top:50%;transform:translateY(-50%);width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid #999;pointer-events:none}
-.tb-sel{border:1px solid var(--border);border-radius:6px;padding:5px 26px 5px 9px;font-size:12px;font-family:'Lato',sans-serif;color:var(--text);background:var(--card);outline:none;appearance:none;cursor:pointer;transition:border-color .2s}
-.tb-sel:focus{border-color:var(--ma)}
+.sel-w::after{content:’’;position:absolute;right:8px;top:50%;transform:translateY(-50%);width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid #999;pointer-events:none}
+.tb-sel{border:1px solid var(–border);border-radius:6px;padding:5px 26px 5px 9px;font-size:12px;font-family:‘Lato’,sans-serif;color:var(–text);background:var(–card);outline:none;appearance:none;cursor:pointer;transition:border-color .2s}
+.tb-sel:focus{border-color:var(–ma)}
 /* sessions */
 .session-grp{margin-bottom:20px}
 .sess-hdr{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
-.sess-yr{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--mr);line-height:1}
-.sess-term{display:inline-flex;align-items:center;background:rgba(155,32,53,.08);color:var(--ma);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;border-radius:4px;padding:3px 9px}
+.sess-yr{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700;color:var(–mr);line-height:1}
+.sess-term{display:inline-flex;align-items:center;background:rgba(155,32,53,.08);color:var(–ma);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;border-radius:4px;padding:3px 9px}
 .sess-hdr-right{margin-left:auto;display:flex;gap:6px;align-items:center}
 /* share */
-.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:6px;border:1px solid var(--border);color:var(--text2);background:var(--card);cursor:pointer;font-size:11px;font-weight:700;font-family:'Lato',sans-serif;transition:.15s;position:relative}
-.share-btn:hover{border-color:var(--ma);color:var(--ma)}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:6px;border:1px solid var(–border);color:var(–text2);background:var(–card);cursor:pointer;font-size:11px;font-weight:700;font-family:‘Lato’,sans-serif;transition:.15s;position:relative}
+.share-btn:hover{border-color:var(–ma);color:var(–ma)}
 .share-btn svg{width:13px;height:13px}
 /* share popover */
-.share-pop{position:absolute;top:calc(100% + 8px);right:0;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:8px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:400;min-width:200px;display:none;flex-direction:column;gap:2px}
+.share-pop{position:absolute;top:calc(100% + 8px);right:0;background:var(–card);border:1px solid var(–border);border-radius:12px;padding:8px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:400;min-width:200px;display:none;flex-direction:column;gap:2px}
 .share-pop.open{display:flex}
-.share-pop-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);font-weight:700;padding:4px 8px 6px;border-bottom:1px solid var(--border);margin-bottom:4px}
-.share-opt{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;transition:background .15s;border:none;background:none;width:100%;text-align:left;font-family:'Lato',sans-serif;font-size:13px;color:var(--text);font-weight:500}
-.share-opt:hover{background:var(--bg)}
+.share-pop-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(–text3);font-weight:700;padding:4px 8px 6px;border-bottom:1px solid var(–border);margin-bottom:4px}
+.share-opt{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;transition:background .15s;border:none;background:none;width:100%;text-align:left;font-family:‘Lato’,sans-serif;font-size:13px;color:var(–text);font-weight:500}
+.share-opt:hover{background:var(–bg)}
 .share-opt-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .share-opt-ico svg{width:16px;height:16px}
 .share-opt-ico.copy{background:#f0f4ff;color:#3355cc}
 .share-opt-ico.wa{background:#e8faf0;color:#25d366}
 .share-opt-ico.native{background:#f5f0fb;color:#7a3a9a}
 .share-opt-lbl{display:flex;flex-direction:column;gap:1px}
-.share-opt-lbl strong{font-size:13px;font-weight:700;color:var(--text)}
-.share-opt-lbl span{font-size:11px;color:var(--text3)}
+.share-opt-lbl strong{font-size:13px;font-weight:700;color:var(–text)}
+.share-opt-lbl span{font-size:11px;color:var(–text3)}
 /* admin action bar */
-.admin-bar{display:none;background:rgba(155,32,53,.05);border-bottom:1px solid var(--border);padding:8px 14px;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.admin-bar{display:none;background:rgba(155,32,53,.05);border-bottom:1px solid var(–border);padding:8px 14px;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .admin-bar.vis{display:flex}
-.aab-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;border:1px solid;transition:.15s}
+.aab-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;font-family:‘Lato’,sans-serif;cursor:pointer;border:1px solid;transition:.15s}
 .aab-btn svg{width:12px;height:12px}
 .aab-btn.edit{color:#2255cc;border-color:rgba(34,85,204,.3);background:rgba(34,85,204,.05)}
 .aab-btn.edit:hover{background:#2255cc;color:#fff}
@@ -196,56 +197,56 @@ nav{position:sticky;top:0;z-index:200;background:var(--nav);backdrop-filter:blur
 /* year divider */
 .yr-divider{display:flex;align-items:center;gap:12px;margin:28px 0 14px}
 .yr-divider:first-child{margin-top:0}
-.yr-divider-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--mr);line-height:1;flex-shrink:0}
-.yr-divider-line{flex:1;height:1px;background:var(--border)}
-.yr-divider-cnt{font-size:11px;color:var(--text3);white-space:nowrap;font-family:monospace}
+.yr-divider-num{font-family:‘Playfair Display’,serif;font-size:22px;font-weight:700;color:var(–mr);line-height:1;flex-shrink:0}
+.yr-divider-line{flex:1;height:1px;background:var(–border)}
+.yr-divider-cnt{font-size:11px;color:var(–text3);white-space:nowrap;font-family:monospace}
 /* term group under year */
 .term-group{margin-bottom:14px}
 .term-group-hdr{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.sess-term{display:inline-flex;align-items:center;background:rgba(155,32,53,.08);color:var(--ma);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;border-radius:4px;padding:3px 9px}
+.sess-term{display:inline-flex;align-items:center;background:rgba(155,32,53,.08);color:var(–ma);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;border-radius:4px;padding:3px 9px}
 .term-hdr-right{margin-left:auto;display:flex;gap:6px;align-items:center}
 /* paper cols */
-.sess-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.sess-card{background:var(–card);border:1px solid var(–border);border-radius:12px;overflow:hidden}
 .papers-row{display:flex;flex-wrap:wrap}
-.p-col{flex:1;min-width:180px;padding:14px 18px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:8px}
+.p-col{flex:1;min-width:180px;padding:14px 18px;border-right:1px solid var(–border);display:flex;flex-direction:column;gap:8px}
 .p-col:last-child{border-right:none}
-.col-lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--text3)}
+.col-lbl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(–text3)}
 .col-lbl.lp{color:#2a7a50}.col-lbl.lm{color:#8a6400}
 .btn-row{display:flex;flex-wrap:wrap;gap:6px}
-.dl-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:6px;font-size:12px;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;transition:.18s;white-space:nowrap;border:1px solid}
+.dl-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:6px;font-size:12px;font-weight:700;font-family:‘Lato’,sans-serif;cursor:pointer;transition:.18s;white-space:nowrap;border:1px solid}
 .dl-btn.bp{background:#f0fbf4;color:#2a7a50;border-color:rgba(42,122,80,.25)}
 .dl-btn.bp:hover{background:#2a7a50;color:#fff}
 .dl-btn.bm{background:#fff8e6;color:#8a6400;border-color:rgba(138,100,0,.22)}
 .dl-btn.bm:hover{background:#8a6400;color:#fff}
-.dl-btn.bn{background:var(--bg);color:var(--border);border-color:var(--border);cursor:default;opacity:.7}
-.prev-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 12px;border-radius:6px;font-size:12px;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;border:1px solid var(--border);background:var(--bg);color:var(--text2);transition:.18s;white-space:nowrap}
-.prev-btn:hover{border-color:var(--ma);color:var(--ma);background:rgba(155,32,53,.04)}
+.dl-btn.bn{background:var(–bg);color:var(–border);border-color:var(–border);cursor:default;opacity:.7}
+.prev-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 12px;border-radius:6px;font-size:12px;font-weight:700;font-family:‘Lato’,sans-serif;cursor:pointer;border:1px solid var(–border);background:var(–bg);color:var(–text2);transition:.18s;white-space:nowrap}
+.prev-btn:hover{border-color:var(–ma);color:var(–ma);background:rgba(155,32,53,.04)}
 .prev-btn svg{width:13px;height:13px;flex-shrink:0}
 /* preview modal */
-.prev-m{background:var(--card);border-radius:16px;width:100%;max-width:700px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.5);display:flex;flex-direction:column;max-height:90vh}
-.prev-m-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);gap:12px;flex-shrink:0}
-.prev-m-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--text);line-height:1.3;flex:1;min-width:0}
-.prev-m-sub{font-size:11px;color:var(--text3);margin-top:3px}
+.prev-m{background:var(–card);border-radius:16px;width:100%;max-width:700px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.5);display:flex;flex-direction:column;max-height:90vh}
+.prev-m-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(–border);gap:12px;flex-shrink:0}
+.prev-m-title{font-family:‘Playfair Display’,serif;font-size:17px;font-weight:700;color:var(–text);line-height:1.3;flex:1;min-width:0}
+.prev-m-sub{font-size:11px;color:var(–text3);margin-top:3px}
 .prev-m-acts{display:flex;gap:8px;flex-shrink:0}
-.prev-dl{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--mb);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;transition:background .18s}
+.prev-dl{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(–mb);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;font-family:‘Lato’,sans-serif;cursor:pointer;transition:background .18s}
 .prev-dl:hover{background:#8f1f38}
 .prev-dl svg{width:14px;height:14px}
 .prev-body{flex:1;overflow:hidden;display:flex;flex-direction:column;min-height:0}
-.prev-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px 24px;background:var(--bg)}
-.prev-doc-icon{width:72px;height:90px;background:var(--card);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.1);position:relative}
-.prev-doc-icon::before{content:'';position:absolute;top:0;right:0;width:20px;height:20px;background:var(--bg);border-bottom-left-radius:6px;border:1px solid var(--border);border-top:none;border-right:none}
-.prev-doc-icon svg{width:32px;height:32px;color:var(--ma)}
-.prev-note{font-size:14px;color:var(--text2);font-weight:700;text-align:center}
-.prev-note2{font-size:12px;color:var(--text3);text-align:center;max-width:280px;line-height:1.5}
+.prev-placeholder{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px 24px;background:var(–bg)}
+.prev-doc-icon{width:72px;height:90px;background:var(–card);border:1px solid var(–border);border-radius:6px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.1);position:relative}
+.prev-doc-icon::before{content:’’;position:absolute;top:0;right:0;width:20px;height:20px;background:var(–bg);border-bottom-left-radius:6px;border:1px solid var(–border);border-top:none;border-right:none}
+.prev-doc-icon svg{width:32px;height:32px;color:var(–ma)}
+.prev-note{font-size:14px;color:var(–text2);font-weight:700;text-align:center}
+.prev-note2{font-size:12px;color:var(–text3);text-align:center;max-width:280px;line-height:1.5}
 .prev-lines{width:100%;max-width:300px;display:flex;flex-direction:column;gap:8px;margin-top:8px}
-.prev-line{height:10px;background:var(--border);border-radius:4px;opacity:.5}
+.prev-line{height:10px;background:var(–border);border-radius:4px;opacity:.5}
 .prev-line:nth-child(2){width:85%}.prev-line:nth-child(3){width:70%}.prev-line:nth-child(4){width:90%}.prev-line:nth-child(5){width:60%}
 /* empty */
 .empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 24px;text-align:center;gap:12px}
-.empty-ico{width:52px;height:52px;background:var(--bg);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.empty-ico svg{width:24px;height:24px;color:var(--border)}
-.empty h3{font-size:15px;font-weight:700;color:var(--text3)}
-.empty p{font-size:13px;color:var(--text3);max-width:280px;line-height:1.5}
+.empty-ico{width:52px;height:52px;background:var(–bg);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.empty-ico svg{width:24px;height:24px;color:var(–border)}
+.empty h3{font-size:15px;font-weight:700;color:var(–text3)}
+.empty p{font-size:13px;color:var(–text3);max-width:280px;line-height:1.5}
 
 /* FOOTER */
 footer{background:#0e0005;padding:40px 24px;text-align:center}
@@ -265,7 +266,7 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 .t-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .toast.success .t-dot{background:#4caf50}
 .toast.error .t-dot{background:#f44336}
-.toast.info .t-dot{background:var(--ma)}
+.toast.info .t-dot{background:var(–ma)}
 
 /* OVERLAYS */
 .ov{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.65);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:16px}
@@ -274,83 +275,105 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 .mx:hover{color:#333}
 /* code */
 .code-m{background:#fff;border-radius:14px;padding:36px 32px;width:100%;max-width:380px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.4)}
-.code-m h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:6px}
+.code-m h2{font-family:‘Playfair Display’,serif;font-size:22px;font-weight:700;margin-bottom:6px}
 .code-m p{font-size:13px;color:#888;margin-bottom:24px}
-.code-in{width:100%;border:1.5px solid #d9d3cb;border-radius:8px;padding:11px 14px;font-size:14px;font-family:'Lato',sans-serif;outline:none;transition:.2s;letter-spacing:.08em;margin-bottom:8px}
-.code-in:focus{border-color:var(--ma);box-shadow:0 0 0 3px rgba(155,32,53,.08)}
+.code-in{width:100%;border:1.5px solid #d9d3cb;border-radius:8px;padding:11px 14px;font-size:14px;font-family:‘Lato’,sans-serif;outline:none;transition:.2s;letter-spacing:.08em;margin-bottom:8px}
+.code-in:focus{border-color:var(–ma);box-shadow:0 0 0 3px rgba(155,32,53,.08)}
 .code-in.err{border-color:#e53e3e}
 .code-err{font-size:12px;color:#e53e3e;min-height:18px;margin-bottom:14px}
-.code-sub{width:100%;padding:12px;background:var(--mb);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;font-family:'Lato',sans-serif;cursor:pointer;transition:background .2s}
+.code-sub{width:100%;padding:12px;background:var(–mb);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;font-family:‘Lato’,sans-serif;cursor:pointer;transition:background .2s}
 .code-sub:hover{background:#8f1f38}
 /* upload / edit */
 .up-m{background:#f5f1eb;border-radius:16px;padding:32px;width:100%;max-width:560px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.45);max-height:92vh;overflow-y:auto}
 .up-hdr{display:flex;align-items:flex-start;gap:10px;margin-bottom:4px}
-.up-hdr svg{width:22px;height:22px;color:var(--ma);margin-top:3px;flex-shrink:0}
-.up-m h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a0a0a}
+.up-hdr svg{width:22px;height:22px;color:var(–ma);margin-top:3px;flex-shrink:0}
+.up-m h2{font-family:‘Playfair Display’,serif;font-size:22px;font-weight:700;color:#1a0a0a}
 .up-desc{font-size:13px;color:#888;margin-bottom:24px}
 .ff{margin-bottom:16px}
 .fl{display:block;font-size:13px;font-weight:700;color:#333;margin-bottom:5px}
-.fi,.fs{width:100%;border:1px solid #d9d3cb;border-radius:8px;padding:10px 14px;font-size:14px;font-family:'Lato',sans-serif;background:#fff;color:#1a0a0a;outline:none;transition:.2s;appearance:none}
-.fi:focus,.fs:focus{border-color:var(--ma);box-shadow:0 0 0 3px rgba(155,32,53,.08)}
+.fi,.fs{width:100%;border:1px solid #d9d3cb;border-radius:8px;padding:10px 14px;font-size:14px;font-family:‘Lato’,sans-serif;background:#fff;color:#1a0a0a;outline:none;transition:.2s;appearance:none}
+.fi:focus,.fs:focus{border-color:var(–ma);box-shadow:0 0 0 3px rgba(155,32,53,.08)}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fs{padding-right:32px;cursor:pointer}
 .subj-note{font-size:11px;color:#999;margin-top:4px}
 
 .m-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
-.btn-cancel{padding:10px 22px;background:#fff;border:1px solid #d9d3cb;border-radius:8px;font-size:14px;font-family:'Lato',sans-serif;color:#555;cursor:pointer;transition:background .18s}
+.btn-cancel{padding:10px 22px;background:#fff;border:1px solid #d9d3cb;border-radius:8px;font-size:14px;font-family:‘Lato’,sans-serif;color:#555;cursor:pointer;transition:background .18s}
 .btn-cancel:hover{background:#f0ece4}
-.btn-add{padding:10px 22px;background:var(--mb);border:none;border-radius:8px;font-size:14px;font-family:'Lato',sans-serif;color:#fff;font-weight:700;cursor:pointer;transition:background .18s}
+.btn-add{padding:10px 22px;background:var(–mb);border:none;border-radius:8px;font-size:14px;font-family:‘Lato’,sans-serif;color:#fff;font-weight:700;cursor:pointer;transition:background .18s}
 .btn-add:hover{background:#8f1f38}
-.up-ok{display:none;flex-direction:column;align-items:center;gap:14px;padding:20px 0;text-align:center}
+.edit-assist{display:none;background:rgba(155,32,53,.06);border:1px solid rgba(155,32,53,.18);border-radius:8px;padding:10px 14px;margin-bottom:16px;gap:6px;flex-direction:column}
+.edit-assist.show{display:flex}
+.edit-assist-lbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(–ma);font-weight:700}
+.edit-assist-val{font-family:‘Playfair Display’,serif;font-size:16px;font-weight:700;color:var(–text);line-height:1.3;word-break:break-word}
+.edit-assist-parts{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.ea-part{display:inline-flex;align-items:center;background:var(–card);border:1px solid var(–border);border-radius:5px;padding:2px 9px;font-size:11.5px;font-weight:700;color:var(–text2)}
+.ea-part.filled{border-color:rgba(155,32,53,.3);color:var(–ma);background:rgba(155,32,53,.06)}
 .up-ok.show{display:flex}
 .ok-ico{width:56px;height:56px;border-radius:50%;background:rgba(155,32,53,.1);display:flex;align-items:center;justify-content:center}
-.ok-ico svg{width:28px;height:28px;color:var(--ma)}
-.ok-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700}
+.ok-ico svg{width:28px;height:28px;color:var(–ma)}
+.ok-title{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700}
 .ok-txt{font-size:13px;color:#888;max-width:340px}
 /* confirm */
 .conf-m{background:#fff;border-radius:14px;padding:32px;width:100%;max-width:380px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.4);text-align:center}
-.conf-m h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.conf-m h3{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700;margin-bottom:8px}
 .conf-m p{font-size:13px;color:#888;margin-bottom:24px;line-height:1.5}
 .conf-acts{display:flex;gap:10px;justify-content:center}
-.btn-danger{padding:10px 24px;background:#cc2233;border:none;border-radius:8px;font-size:14px;font-family:'Lato',sans-serif;color:#fff;font-weight:700;cursor:pointer;transition:background .18s}
+.btn-danger{padding:10px 24px;background:#cc2233;border:none;border-radius:8px;font-size:14px;font-family:‘Lato’,sans-serif;color:#fff;font-weight:700;cursor:pointer;transition:background .18s}
 .btn-danger:hover{background:#a01828}
 /* admin panel */
-.ap-m{background:var(--card);border-radius:16px;padding:28px 28px 20px;width:100%;max-width:860px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.45);max-height:90vh;display:flex;flex-direction:column;gap:0}
-.ap-m h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);margin-bottom:3px}
-.ap-sub{font-size:12px;color:var(--text3);margin-bottom:14px}
+.ap-m{background:var(–card);border-radius:16px;padding:28px 28px 20px;width:100%;max-width:860px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.45);max-height:90vh;display:flex;flex-direction:column;gap:0}
+.ap-m h2{font-family:‘Playfair Display’,serif;font-size:22px;font-weight:700;color:var(–text);margin-bottom:3px}
+.ap-sub{font-size:12px;color:var(–text3);margin-bottom:14px}
 .ap-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.ap-search{width:100%;border:1px solid var(--border);border-radius:7px;padding:8px 10px 8px 30px;font-size:13px;font-family:'Lato',sans-serif;color:var(--text);background:var(--card);outline:none;transition:border-color .2s}
-.ap-search:focus{border-color:var(--ma)}
-.ap-sel{width:100%;border:1px solid var(--border);border-radius:7px;padding:8px 26px 8px 10px;font-size:12px;font-family:'Lato',sans-serif;color:var(--text);background:var(--card);outline:none;appearance:none;cursor:pointer}
-.ap-sel:focus{border-color:var(--ma)}
-.ap-table-wrap{overflow-y:auto;flex:1;border:1px solid var(--border);border-radius:10px}
+.ap-search{width:100%;border:1px solid var(–border);border-radius:7px;padding:8px 10px 8px 30px;font-size:13px;font-family:‘Lato’,sans-serif;color:var(–text);background:var(–card);outline:none;transition:border-color .2s}
+.ap-search:focus{border-color:var(–ma)}
+.ap-sel{width:100%;border:1px solid var(–border);border-radius:7px;padding:8px 26px 8px 10px;font-size:12px;font-family:‘Lato’,sans-serif;color:var(–text);background:var(–card);outline:none;appearance:none;cursor:pointer}
+.ap-sel:focus{border-color:var(–ma)}
+.ap-table-wrap{overflow-y:auto;flex:1;border:1px solid var(–border);border-radius:10px}
 .ap-table{width:100%;border-collapse:collapse;font-size:13px}
-.ap-th{text-align:left;padding:9px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);border-bottom:2px solid var(--border);font-weight:700;white-space:nowrap;background:var(--bg);position:sticky;top:0}
+.ap-th{text-align:left;padding:9px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(–text3);border-bottom:2px solid var(–border);font-weight:700;white-space:nowrap;background:var(–bg);position:sticky;top:0}
 .ap-th.sortable{cursor:pointer;user-select:none}
-.ap-th.sortable:hover{color:var(--ma)}
-.ap-th.sort-asc,.ap-th.sort-desc{color:var(--ma)}
+.ap-th.sortable:hover{color:var(–ma)}
+.ap-th.sort-asc,.ap-th.sort-desc{color:var(–ma)}
 .sort-ico{font-size:11px;opacity:.5;margin-left:3px}
 .ap-th.sort-asc .sort-ico{opacity:1}
 .ap-th.sort-desc .sort-ico{opacity:1}
-.ap-table td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:middle}
+.ap-table td{padding:10px 12px;border-bottom:1px solid var(–border);color:var(–text2);vertical-align:middle}
 .ap-table tr:last-child td{border-bottom:none}
 .ap-table tr:hover td{background:rgba(155,32,53,.025)}
 .tt{display:inline-flex;align-items:center;font-size:10px;border-radius:4px;padding:2px 7px;font-weight:700}
 .tt.p{background:#f0fbf4;color:#2a7a50}.tt.m{background:#fff8e6;color:#8a6400}
 .tt.link-yes{background:#e8f4fd;color:#1a6fa8;font-size:10px}
-.tt.link-no{background:var(--bg);color:var(--text3);font-size:10px}
+.tt.link-no{background:var(–bg);color:var(–text3);font-size:10px}
 .tbl-acts{display:flex;gap:5px}
 .tbl-btn{width:28px;height:28px;border-radius:6px;border:1px solid;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.15s;background:none}
 .tbl-btn svg{width:13px;height:13px;pointer-events:none}
 .tbl-btn.e{color:#2255cc;border-color:rgba(34,85,204,.3)}.tbl-btn.e:hover{background:#2255cc;color:#fff}
 .tbl-btn.d{color:#cc2233;border-color:rgba(204,34,51,.3)}.tbl-btn.d:hover{background:#cc2233;color:#fff}
-.ap-empty{text-align:center;padding:40px;color:var(--text3);font-size:14px}
-.ap-footer{font-size:12px;color:var(--text3);padding-top:10px;text-align:right}
+.ap-empty{text-align:center;padding:40px;color:var(–text3);font-size:14px}
+.ap-footer{font-size:12px;color:var(–text3);padding-top:10px;text-align:right}
+
+/* ── LOADING OVERLAY ── */
+.load-ov{position:fixed;inset:0;z-index:9998;background:#0e0005;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .4s}
+.load-ov.fade{opacity:0;pointer-events:none}
+.load-ov.gone{display:none}
+.load-spinner{width:44px;height:44px;border-radius:50%;border:3px solid rgba(155,32,53,.25);border-top-color:#9b2035;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-text{color:rgba(240,232,224,.55);font-size:13px;letter-spacing:.08em}
+.load-err{color:#e57373;font-size:13px;text-align:center;max-width:280px;line-height:1.5;display:none}
+.save-indicator{position:fixed;bottom:24px;left:24px;z-index:9000;display:flex;align-items:center;gap:8px;background:#1a0a0a;color:#fff;border-radius:8px;padding:9px 14px;font-size:12px;font-weight:600;opacity:0;transform:translateY(8px);transition:.25s;pointer-events:none}
+.save-indicator.show{opacity:1;transform:translateY(0)}
+.save-dot{width:7px;height:7px;border-radius:50%;background:#4caf50;flex-shrink:0}
+.save-dot.saving{background:#f6c90e;animation:spin .6s linear infinite}
+.save-dot.err{background:#f44336}
 </style>
+
 </head>
 <body>
 
 <!-- NOTICE -->
+
 <div class="notice" id="noticeBar">
   📚 New papers added for 2025! Check the latest uploads.
   <a href="#browse">Browse now →</a>
@@ -358,6 +381,7 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 </div>
 
 <!-- NAV -->
+
 <nav>
   <a class="nav-brand" href="#">
     <div class="nav-logo">
@@ -411,6 +435,7 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
   <div class="hero-crest">
     <svg viewBox="0 0 70 70" fill="none">
@@ -443,6 +468,7 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 </section>
 
 <!-- RECENTLY ADDED -->
+
 <div class="recent-strip">
   <div class="recent-inner">
     <div class="recent-lbl"><span class="pulse-dot"></span>Recently Added</div>
@@ -451,6 +477,7 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 </div>
 
 <!-- BROWSE -->
+
 <section class="browse" id="browse">
   <div class="browse-wrap">
     <div class="browse-hdr">
@@ -462,121 +489,125 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
       <div class="kbd-hint">Press <span class="kbd">/</span> to search</div>
     </div>
 
-    <div class="search-wrap">
-      <svg class="search-ico" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      <input class="search-in" id="searchIn" type="text" placeholder="Search subject, year, grade, type…"/>
-      <button class="search-clear" id="searchClr">×</button>
+```
+<div class="search-wrap">
+  <svg class="search-ico" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+  <input class="search-in" id="searchIn" type="text" placeholder="Search subject, year, grade, type…"/>
+  <button class="search-clear" id="searchClr">×</button>
+</div>
+<p class="hints">Try: <span>combined mathematics</span>, <span>grade 12 physics 2024</span>, <span>marking scheme</span></p>
+
+<!-- STEP 1 -->
+<div class="step" id="s1">
+  <div class="step-lbl"><span class="step-n">1</span>Browse by Grade</div>
+
+  <p class="grade-section-lbl">Grade 6–9 · Junior Secondary</p>
+  <div class="grade-card-grid">
+    <button class="g-card" data-g="6">
+      <div class="g-card-num">6</div>
+      <div class="g-card-name">Grade 6</div>
+      <div class="g-card-cnt" data-gc="6">0 papers</div>
+    </button>
+    <button class="g-card" data-g="7">
+      <div class="g-card-num">7</div>
+      <div class="g-card-name">Grade 7</div>
+      <div class="g-card-cnt" data-gc="7">0 papers</div>
+    </button>
+    <button class="g-card" data-g="8">
+      <div class="g-card-num">8</div>
+      <div class="g-card-name">Grade 8</div>
+      <div class="g-card-cnt" data-gc="8">0 papers</div>
+    </button>
+    <button class="g-card" data-g="9">
+      <div class="g-card-num">9</div>
+      <div class="g-card-name">Grade 9</div>
+      <div class="g-card-cnt" data-gc="9">0 papers</div>
+    </button>
+  </div>
+
+  <p class="grade-section-lbl">GCE Ordinary Level · O/L</p>
+  <div class="grade-card-grid">
+    <button class="g-card" data-g="10">
+      <div class="g-card-num">10</div>
+      <div class="g-card-name">Grade 10</div>
+      <div class="g-card-cnt" data-gc="10">0 papers</div>
+    </button>
+    <button class="g-card" data-g="11">
+      <div class="g-card-num">11</div>
+      <div class="g-card-name">Grade 11</div>
+      <div class="g-card-cnt" data-gc="11">0 papers</div>
+    </button>
+  </div>
+
+  <p class="grade-section-lbl">GCE Advanced Level · A/L</p>
+  <div class="grade-card-grid">
+    <button class="g-card" data-g="12">
+      <div class="g-card-num">12</div>
+      <div class="g-card-name">Grade 12</div>
+      <div class="g-card-cnt" data-gc="12">0 papers</div>
+    </button>
+    <button class="g-card" data-g="13">
+      <div class="g-card-num">13</div>
+      <div class="g-card-name">Grade 13</div>
+      <div class="g-card-cnt" data-gc="13">0 papers</div>
+    </button>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="bc" id="bc" style="display:none">
+  <button class="bc-btn" id="bcG"></button>
+  <span class="bc-sep">›</span>
+  <button class="bc-btn" id="bcS" style="display:none"></button>
+  <span class="bc-sep" id="bcSep2" style="display:none">›</span>
+  <span class="bc-cur" id="bcSub" style="display:none"></span>
+</div>
+
+<!-- STEP 2 -->
+<div class="step" id="s2" style="display:none">
+  <div class="step-lbl"><span class="step-n">2</span>Select Stream</div>
+  <div class="stream-grid" id="streamGrid"></div>
+</div>
+
+<!-- STEP 3 -->
+<div class="step" id="s3" style="display:none">
+  <div class="step-lbl"><span class="step-n">3</span>Select Subject</div>
+  <div class="subj-grid" id="subjGrid"></div>
+</div>
+
+<!-- STEP 4 -->
+<div class="step" id="s4" style="display:none">
+  <div class="toolbar">
+    <div class="tb-left">
+      <span class="cnt-lbl" id="cntLbl">0 papers</span>
+      <span class="yr-range" id="yrRange"></span>
     </div>
-    <p class="hints">Try: <span>combined mathematics</span>, <span>grade 12 physics 2024</span>, <span>marking scheme</span></p>
-
-    <!-- STEP 1 -->
-    <div class="step" id="s1">
-      <div class="step-lbl"><span class="step-n">1</span>Browse by Grade</div>
-
-      <p class="grade-section-lbl">Grade 6–9 · Junior Secondary</p>
-      <div class="grade-card-grid">
-        <button class="g-card" data-g="6">
-          <div class="g-card-num">6</div>
-          <div class="g-card-name">Grade 6</div>
-          <div class="g-card-cnt" data-gc="6">0 papers</div>
-        </button>
-        <button class="g-card" data-g="7">
-          <div class="g-card-num">7</div>
-          <div class="g-card-name">Grade 7</div>
-          <div class="g-card-cnt" data-gc="7">0 papers</div>
-        </button>
-        <button class="g-card" data-g="8">
-          <div class="g-card-num">8</div>
-          <div class="g-card-name">Grade 8</div>
-          <div class="g-card-cnt" data-gc="8">0 papers</div>
-        </button>
-        <button class="g-card" data-g="9">
-          <div class="g-card-num">9</div>
-          <div class="g-card-name">Grade 9</div>
-          <div class="g-card-cnt" data-gc="9">0 papers</div>
-        </button>
+    <div class="tb-right">
+      <div class="fg">
+        <label>Year</label>
+        <div class="sel-w"><select class="tb-sel" id="fYear"><option value="">All Years</option></select></div>
       </div>
-
-      <p class="grade-section-lbl">GCE Ordinary Level · O/L</p>
-      <div class="grade-card-grid">
-        <button class="g-card" data-g="10">
-          <div class="g-card-num">10</div>
-          <div class="g-card-name">Grade 10</div>
-          <div class="g-card-cnt" data-gc="10">0 papers</div>
-        </button>
-        <button class="g-card" data-g="11">
-          <div class="g-card-num">11</div>
-          <div class="g-card-name">Grade 11</div>
-          <div class="g-card-cnt" data-gc="11">0 papers</div>
-        </button>
-      </div>
-
-      <p class="grade-section-lbl">GCE Advanced Level · A/L</p>
-      <div class="grade-card-grid">
-        <button class="g-card" data-g="12">
-          <div class="g-card-num">12</div>
-          <div class="g-card-name">Grade 12</div>
-          <div class="g-card-cnt" data-gc="12">0 papers</div>
-        </button>
-        <button class="g-card" data-g="13">
-          <div class="g-card-num">13</div>
-          <div class="g-card-name">Grade 13</div>
-          <div class="g-card-cnt" data-gc="13">0 papers</div>
-        </button>
-      </div>
-    </div>
-
-    <!-- BREADCRUMB -->
-    <div class="bc" id="bc" style="display:none">
-      <button class="bc-btn" id="bcG"></button>
-      <span class="bc-sep">›</span>
-      <button class="bc-btn" id="bcS" style="display:none"></button>
-      <span class="bc-sep" id="bcSep2" style="display:none">›</span>
-      <span class="bc-cur" id="bcSub" style="display:none"></span>
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="step" id="s2" style="display:none">
-      <div class="step-lbl"><span class="step-n">2</span>Select Stream</div>
-      <div class="stream-grid" id="streamGrid"></div>
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="step" id="s3" style="display:none">
-      <div class="step-lbl"><span class="step-n">3</span>Select Subject</div>
-      <div class="subj-grid" id="subjGrid"></div>
-    </div>
-
-    <!-- STEP 4 -->
-    <div class="step" id="s4" style="display:none">
-      <div class="toolbar">
-        <div class="tb-left">
-          <span class="cnt-lbl" id="cntLbl">0 papers</span>
-          <span class="yr-range" id="yrRange"></span>
+      <div class="fg">
+        <label>Show</label>
+        <div class="sel-w">
+          <select class="tb-sel" id="fView">
+            <option value="">All</option>
+            <option value="paper">Papers Only</option>
+            <option value="marking">Marking Only</option>
+          </select>
         </div>
-        <div class="tb-right">
-          <div class="fg">
-            <label>Year</label>
-            <div class="sel-w"><select class="tb-sel" id="fYear"><option value="">All Years</option></select></div>
-          </div>
-          <div class="fg">
-            <label>Show</label>
-            <div class="sel-w">
-              <select class="tb-sel" id="fView">
-                <option value="">All</option>
-                <option value="paper">Papers Only</option>
-                <option value="marking">Marking Only</option>
-              </select>
-            </div>
-          </div>
-        </div>
       </div>
-      <div id="papersList"></div>
     </div>
+  </div>
+  <div id="papersList"></div>
+</div>
+```
+
   </div>
 </section>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="ft-logo">
     <div class="ft-circle">
@@ -589,9 +620,11 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 </footer>
 
 <!-- TOASTS -->
+
 <div class="toast-wrap" id="toastWrap"></div>
 
 <!-- CODE MODAL -->
+
 <div class="ov" id="codeOv">
   <div class="code-m">
     <button class="mx" id="codeX">×</button>
@@ -604,6 +637,7 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 </div>
 
 <!-- UPLOAD / EDIT MODAL -->
+
 <div class="ov" id="upOv">
   <div class="up-m">
     <button class="mx" id="upX">×</button>
@@ -613,59 +647,80 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
         <h2 id="upTitle">Upload Paper</h2>
       </div>
       <p class="up-desc" id="upDesc">Add a past paper or marking scheme to the vault.</p>
-      <div class="ff"><label class="fl">Paper Title</label><input class="fi" id="upT" placeholder="Auto-generated"/></div>
-      <div class="fgrid ff">
-        <div><label class="fl">Grade</label>
-          <div class="sel-w"><select class="fs" id="upG">
-            <option value="6">Grade 6</option><option value="7">Grade 7</option>
-            <option value="8">Grade 8</option><option value="9">Grade 9</option>
-            <option value="10">Grade 10</option><option value="11">Grade 11</option>
-            <option value="12" selected>Grade 12</option><option value="13">Grade 13</option>
-          </select></div>
-        </div>
-        <div><label class="fl">Term</label>
-          <div class="sel-w"><select class="fs" id="upTm">
-            <option value="1">Term 1</option><option value="2">Term 2</option><option value="3">Term 3</option>
-          </select></div>
-        </div>
-      </div>
-      <div class="fgrid ff">
-        <div><label class="fl">Subject</label>
-          <div class="sel-w"><select class="fs" id="upSub"></select></div>
-          <p class="subj-note" id="upNote"></p>
-        </div>
-        <div><label class="fl">Year</label><input class="fi" type="number" id="upYr" value="2026" min="2000" max="2099"/></div>
-      </div>
-      <div class="ff">
-        <label class="fl">Type</label>
-        <div class="sel-w"><select class="fs" id="upPart">
-          <option value="Paper">Paper</option>
-          <option value="Marking Scheme">Marking Scheme</option>
-        </select></div>
-      </div>
-      <div class="ff">
-        <label class="fl">Download Link <span style="color:var(--ma)">*</span></label>
-        <div style="position:relative">
-          <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:#aaa;pointer-events:none" viewBox="0 0 16 16" fill="none"><path d="M6.5 9.5l5-5M11.5 4.5H8M11.5 4.5V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 4H3.5A1.5 1.5 0 002 5.5v7A1.5 1.5 0 003.5 14h7A1.5 1.5 0 0012 12.5V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          <input class="fi" id="upLink" type="url" placeholder="https://drive.google.com/file/…" style="padding-left:34px"/>
-        </div>
-        <p class="subj-note" style="margin-top:6px">Paste a Google Drive, Dropbox, or any direct PDF link. Students will be redirected to this URL when they click Download.</p>
-      </div>
-      <div class="m-actions">
-        <button class="btn-cancel" id="upCancel">Cancel</button>
-        <button class="btn-add" id="upSave">Add to Vault</button>
-      </div>
+
+```
+  <!-- Edit assist bar (shown only when editing) -->
+  <div class="edit-assist" id="editAssist">
+    <div class="edit-assist-lbl">Title Preview</div>
+    <div class="edit-assist-val" id="editAssistVal"></div>
+    <div class="edit-assist-parts">
+      <span class="ea-part" id="eaYear"></span>
+      <span style="color:var(--text3);font-size:13px;align-self:center">·</span>
+      <span class="ea-part" id="eaGrade"></span>
+      <span style="color:var(--text3);font-size:13px;align-self:center">-</span>
+      <span class="ea-part" id="eaTerm"></span>
+      <span style="color:var(--text3);font-size:13px;align-self:center">·</span>
+      <span class="ea-part" id="eaSubject"></span>
+      <span style="color:var(--text3);font-size:13px;align-self:center">·</span>
+      <span class="ea-part" id="eaType"></span>
     </div>
-    <div class="up-ok" id="upOk">
-      <div class="ok-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <p class="ok-title">Added to Vault!</p>
-      <p class="ok-txt" id="okTxt"></p>
-      <button class="btn-add" id="upAnother">Upload Another</button>
+  </div>
+  <div class="ff"><label class="fl">Paper Title</label><input class="fi" id="upT" placeholder="Auto-generated"/></div>
+  <div class="fgrid ff">
+    <div><label class="fl">Grade</label>
+      <div class="sel-w"><select class="fs" id="upG">
+        <option value="6">Grade 6</option><option value="7">Grade 7</option>
+        <option value="8">Grade 8</option><option value="9">Grade 9</option>
+        <option value="10">Grade 10</option><option value="11">Grade 11</option>
+        <option value="12" selected>Grade 12</option><option value="13">Grade 13</option>
+      </select></div>
     </div>
+    <div><label class="fl">Term</label>
+      <div class="sel-w"><select class="fs" id="upTm">
+        <option value="1">Term 1</option><option value="2">Term 2</option><option value="3">Term 3</option>
+      </select></div>
+    </div>
+  </div>
+  <div class="fgrid ff">
+    <div><label class="fl">Subject</label>
+      <div class="sel-w"><select class="fs" id="upSub"></select></div>
+      <p class="subj-note" id="upNote"></p>
+    </div>
+    <div><label class="fl">Year</label><input class="fi" type="number" id="upYr" value="2026" min="2000" max="2099"/></div>
+  </div>
+  <div class="ff">
+    <label class="fl">Type</label>
+    <div class="sel-w"><select class="fs" id="upPart">
+      <option value="Paper">Paper</option>
+      <option value="Marking Scheme">Marking Scheme</option>
+    </select></div>
+  </div>
+  <div class="ff">
+    <label class="fl">Download Link <span style="color:var(--ma)">*</span></label>
+    <div style="position:relative">
+      <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:#aaa;pointer-events:none" viewBox="0 0 16 16" fill="none"><path d="M6.5 9.5l5-5M11.5 4.5H8M11.5 4.5V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 4H3.5A1.5 1.5 0 002 5.5v7A1.5 1.5 0 003.5 14h7A1.5 1.5 0 0012 12.5V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <input class="fi" id="upLink" type="url" placeholder="https://drive.google.com/file/…" style="padding-left:34px"/>
+    </div>
+    <p class="subj-note" style="margin-top:6px">Paste a Google Drive, Dropbox, or any direct PDF link. Students will be redirected to this URL when they click Download.</p>
+  </div>
+  <div class="m-actions">
+    <button class="btn-cancel" id="upCancel">Cancel</button>
+    <button class="btn-add" id="upSave">Add to Vault</button>
+  </div>
+</div>
+<div class="up-ok" id="upOk">
+  <div class="ok-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <p class="ok-title">Added to Vault!</p>
+  <p class="ok-txt" id="okTxt"></p>
+  <button class="btn-add" id="upAnother">Upload Another</button>
+</div>
+```
+
   </div>
 </div>
 
 <!-- PREVIEW MODAL -->
+
 <div class="ov" id="prevOv">
   <div class="prev-m">
     <div class="prev-m-hdr">
@@ -698,6 +753,7 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 </div>
 
 <!-- CONFIRM DELETE -->
+
 <div class="ov" id="confOv">
   <div class="conf-m">
     <button class="mx" id="confX">×</button>
@@ -711,52 +767,56 @@ footer{background:#0e0005;padding:40px 24px;text-align:center}
 </div>
 
 <!-- ADMIN PANEL -->
+
 <div class="ov" id="apOv">
   <div class="ap-m">
     <button class="mx" id="apX" style="color:#999">×</button>
     <h2>Manage Papers</h2>
     <p class="ap-sub" id="apSub"></p>
 
-    <!-- Filter + Search bar -->
-    <div class="ap-bar">
-      <div style="position:relative;flex:1;min-width:160px">
-        <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:#aaa;pointer-events:none" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        <input class="ap-search" id="apSearch" type="text" placeholder="Search subject…"/>
-      </div>
-      <div class="sel-w" style="min-width:110px">
-        <select class="ap-sel" id="apFGrade"><option value="">All Grades</option>
-          <option value="6">Grade 6</option><option value="7">Grade 7</option>
-          <option value="8">Grade 8</option><option value="9">Grade 9</option>
-          <option value="10">Grade 10</option><option value="11">Grade 11</option>
-          <option value="12">Grade 12</option><option value="13">Grade 13</option>
-        </select>
-      </div>
-      <div class="sel-w" style="min-width:110px">
-        <select class="ap-sel" id="apFType"><option value="">All Types</option>
-          <option value="Paper">Paper</option>
-          <option value="Marking Scheme">Marking Scheme</option>
-        </select>
-      </div>
-      <div class="sel-w" style="min-width:100px">
-        <select class="ap-sel" id="apFYear"><option value="">All Years</option></select>
-      </div>
-    </div>
+```
+<!-- Filter + Search bar -->
+<div class="ap-bar">
+  <div style="position:relative;flex:1;min-width:160px">
+    <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:#aaa;pointer-events:none" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <input class="ap-search" id="apSearch" type="text" placeholder="Search subject…"/>
+  </div>
+  <div class="sel-w" style="min-width:110px">
+    <select class="ap-sel" id="apFGrade"><option value="">All Grades</option>
+      <option value="6">Grade 6</option><option value="7">Grade 7</option>
+      <option value="8">Grade 8</option><option value="9">Grade 9</option>
+      <option value="10">Grade 10</option><option value="11">Grade 11</option>
+      <option value="12">Grade 12</option><option value="13">Grade 13</option>
+    </select>
+  </div>
+  <div class="sel-w" style="min-width:110px">
+    <select class="ap-sel" id="apFType"><option value="">All Types</option>
+      <option value="Paper">Paper</option>
+      <option value="Marking Scheme">Marking Scheme</option>
+    </select>
+  </div>
+  <div class="sel-w" style="min-width:100px">
+    <select class="ap-sel" id="apFYear"><option value="">All Years</option></select>
+  </div>
+</div>
 
-    <div class="ap-table-wrap"><table class="ap-table">
-      <thead>
-        <tr>
-          <th class="ap-th sortable" data-col="subject">Subject <span class="sort-ico" id="si-subject">↕</span></th>
-          <th class="ap-th sortable" data-col="grade">Grade <span class="sort-ico" id="si-grade">↕</span></th>
-          <th class="ap-th sortable" data-col="term">Term <span class="sort-ico" id="si-term">↕</span></th>
-          <th class="ap-th sortable" data-col="year">Year <span class="sort-ico" id="si-year">↕</span></th>
-          <th class="ap-th sortable" data-col="type">Type <span class="sort-ico" id="si-type">↕</span></th>
-          <th class="ap-th">Link</th>
-          <th class="ap-th"></th>
-        </tr>
-      </thead>
-      <tbody id="apBody"></tbody>
-    </table>
-    </div><div class="ap-footer" id="apFooter"></div>
+<div class="ap-table-wrap"><table class="ap-table">
+  <thead>
+    <tr>
+      <th class="ap-th sortable" data-col="subject">Subject <span class="sort-ico" id="si-subject">↕</span></th>
+      <th class="ap-th sortable" data-col="grade">Grade <span class="sort-ico" id="si-grade">↕</span></th>
+      <th class="ap-th sortable" data-col="term">Term <span class="sort-ico" id="si-term">↕</span></th>
+      <th class="ap-th sortable" data-col="year">Year <span class="sort-ico" id="si-year">↕</span></th>
+      <th class="ap-th sortable" data-col="type">Type <span class="sort-ico" id="si-type">↕</span></th>
+      <th class="ap-th">Link</th>
+      <th class="ap-th"></th>
+    </tr>
+  </thead>
+  <tbody id="apBody"></tbody>
+</table>
+</div><div class="ap-footer" id="apFooter"></div>
+```
+
   </div>
 </div>
 
@@ -802,19 +862,10 @@ const CUR = {
 function ck(g){g=+g;return g<=9?'junior':g<=11?'ol':'al';}
 
 /* ═══════════ DB ═══════════ */
-let DB=[
-  {id:1,grade:12,stream:'phys',subject:'Combined Mathematics',term:1,year:2024,type:'Paper',link:'https://drive.google.com/file/d/example1/view',ts:Date.now()-864e5*5},
-  {id:2,grade:12,stream:'phys',subject:'Combined Mathematics',term:1,year:2024,type:'Marking Scheme',link:'https://drive.google.com/file/d/example2/view',ts:Date.now()-864e5*4},
-  {id:3,grade:12,stream:'phys',subject:'Combined Mathematics',term:2,year:2024,type:'Paper',link:'https://drive.google.com/file/d/example3/view',ts:Date.now()-864e5*3},
-  {id:4,grade:12,stream:'phys',subject:'Combined Mathematics',term:2,year:2024,type:'Marking Scheme',link:'https://drive.google.com/file/d/example4/view',ts:Date.now()-864e5*2},
-  {id:5,grade:12,stream:'phys',subject:'Physics',term:1,year:2024,type:'Paper',link:'https://drive.google.com/file/d/example5/view',ts:Date.now()-864e5},
-  {id:6,grade:12,stream:'phys',subject:'Physics',term:1,year:2024,type:'Marking Scheme',link:'https://drive.google.com/file/d/example6/view',ts:Date.now()-864e5},
-  {id:7,grade:12,stream:'com',subject:'Accounting',term:1,year:2025,type:'Paper',link:'https://drive.google.com/file/d/example7/view',ts:Date.now()-36e5*8},
-  {id:8,grade:12,stream:'com',subject:'Economics',term:1,year:2025,type:'Paper',link:'',ts:Date.now()-36e5*4},
-  {id:9,grade:13,stream:'phys',subject:'Combined Mathematics',term:1,year:2024,type:'Paper',link:'https://drive.google.com/file/d/example9/view',ts:Date.now()-36e5},
-  {id:10,grade:13,stream:'phys',subject:'Combined Mathematics',term:1,year:2024,type:'Marking Scheme',link:'https://drive.google.com/file/d/example10/view',ts:Date.now()-36e5},
-];
-let nextId=14;
+/* ── RUNTIME STATE ── */
+let DB = [];          // populated from KV on load
+let nextId = 1;       // will be set to max(id)+1 after load
+let sessionKey = null; // set in memory after successful admin auth
 
 const isM=t=>t==='Marking Scheme';
 const typeLabel=t=>isM(t)?'Marking Scheme':'Paper';
@@ -1003,8 +1054,11 @@ function renderPapers(){
       if(showP) cols+=`<div class="p-col"><div class="col-lbl lp">Paper</div>${paperBtn(sp,'Download','bp')}</div>`;
       if(showM) cols+=`<div class="p-col"><div class="col-lbl lm">Marking Scheme</div>${paperBtn(ms,'Download','bm')}</div>`;
 
-      const shareText=`${ST.subject} – Term ${tm} ${yr} | Nalanda College Past Papers`;
-      const waUrl=`https://wa.me/?text=${encodeURIComponent(shareText)}`;
+      // Build deep-link URL with all filters pre-applied
+      const baseUrl=window.location.href.split('?')[0].split('#')[0];
+      const params=new URLSearchParams({grade:ST.grade,stream:ST.stream,subject:encodeURIComponent(ST.subject),year:yr,term:tm});
+      const deepLink=`${baseUrl}?${params.toString()}#browse`;
+      const waUrl=`https://wa.me/?text=${encodeURIComponent(`📚 ${ST.subject} – Grade ${ST.grade} Term ${tm} ${yr}\nNalanda Paper Vault\n${deepLink}`)}`;
       const shareId=`share-${yr}-${tm}`;
       html+=`<div class="term-group">
         <div class="term-group-hdr">
@@ -1017,15 +1071,15 @@ function renderPapers(){
               </button>
               <div class="share-pop" id="${shareId}">
                 <div class="share-pop-title">Share this paper</div>
-                <button class="share-opt" data-action="copy" data-text="${shareText}">
+                <button class="share-opt" data-action="copy" data-text="${deepLink}">
                   <span class="share-opt-ico copy"><svg viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.4"/></svg></span>
-                  <span class="share-opt-lbl"><strong>Copy Link</strong><span>Copy paper details to clipboard</span></span>
+                  <span class="share-opt-lbl"><strong>Copy Link</strong><span>Opens directly to this paper</span></span>
                 </button>
                 <button class="share-opt" data-action="whatsapp" data-url="${waUrl}">
                   <span class="share-opt-ico wa"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 5.8c0 3.4 2.3 5.6 4.6 4.5l.5-1.1-.6-.5-1 .6c-.6-.5-1.2-1.1-1.5-1.9l.6-1-.5-.6-1.1.5c-.1.2-.1.3-.1.5z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg></span>
-                  <span class="share-opt-lbl"><strong>WhatsApp</strong><span>Send via WhatsApp</span></span>
+                  <span class="share-opt-lbl"><strong>WhatsApp</strong><span>Send link via WhatsApp</span></span>
                 </button>
-                ${navigator.share?`<button class="share-opt" data-action="native" data-text="${shareText}">
+                ${navigator.share?`<button class="share-opt" data-action="native" data-text="${deepLink}">
                   <span class="share-opt-ico native"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8M5 5l3-3 3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 10v2.5A1.5 1.5 0 004.5 14h7a1.5 1.5 0 001.5-1.5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
                   <span class="share-opt-lbl"><strong>More options</strong><span>Share via other apps</span></span>
                 </button>`:''}
@@ -1198,6 +1252,7 @@ function openEdit(id){
   $('upTitle').textContent='Edit Paper';
   $('upDesc').textContent='Update the details for this paper.';
   $('upSave').textContent='Save Changes';
+  $('editAssist').classList.add('show');
   $('upForm').style.display='block';$('upOk').classList.remove('show');
   $('upG').value=String(p.grade);
   populateSubjects(p.grade);$('upSub').value=p.subject;
@@ -1206,11 +1261,12 @@ function openEdit(id){
   $('upLink').value=p.link||'';
   const partLabel=p.type==='Paper'?'Paper':'Marking Scheme';
   $('upT').value=`${p.year} ${p.grade}-${p.term} ${p.subject} ${partLabel}`;
+  updAssist();
   $('upOv').classList.add('open');
 }
 
 /* ═══════════ ROLE ═══════════ */
-const ADMIN='nalanda';
+// Admin key is stored in KV — verified server-side via /api/auth
 const rBtn=$('roleBtn'),rLbl=$('roleLbl'),rDd=$('roleDd'),upBtn=$('uploadBtn'),apBtn=$('adminPanelBtn'),aDot=$('adminDot');
 rBtn.addEventListener('click',e=>{e.stopPropagation();rDd.classList.toggle('open');});
 document.addEventListener('click',()=>rDd.classList.remove('open'));
@@ -1235,9 +1291,26 @@ const cOv=$('codeOv'),cIn=$('codeIn'),cErr=$('codeErr');
 function openCodeOv(){cIn.value='';cErr.textContent='';cIn.classList.remove('err');cOv.classList.add('open');setTimeout(()=>cIn.focus(),80);}
 $('codeX').addEventListener('click',()=>cOv.classList.remove('open'));
 cOv.addEventListener('click',e=>{if(e.target===cOv)cOv.classList.remove('open');});
-function tryLogin(){
-  if(cIn.value===ADMIN){cOv.classList.remove('open');setRole('admin');toast('Welcome, Admin!','success');}
-  else{cErr.textContent='Incorrect code.';cIn.classList.add('err');cIn.value='';cIn.focus();}
+async function tryLogin(){
+  const key=cIn.value.trim();
+  if(!key){cErr.textContent='Please enter the admin code.';return;}
+  cErr.textContent='';cIn.disabled=true;
+  try{
+    const r=await fetch('/api/auth',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key})});
+    const d=await r.json();
+    if(d.ok){
+      sessionKey=d.token; // store in memory only
+      cOv.classList.remove('open');
+      setRole('admin');
+      toast('Welcome, Admin!','success');
+    } else {
+      cErr.textContent='Incorrect code.';cIn.classList.add('err');cIn.value='';cIn.focus();
+    }
+  } catch(e){
+    cErr.textContent='Network error. Try again.';
+  } finally {
+    cIn.disabled=false;
+  }
 }
 $('codeSub').addEventListener('click',tryLogin);
 cIn.addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin();});
@@ -1255,17 +1328,29 @@ function populateSubjects(g){
   $('upSub').innerHTML=list.map(s=>`<option value="${s}">${s}</option>`).join('');
   $('upNote').textContent={junior:'Grades 6–9',ol:'O/L',al:'A/L'}[ck(+g)];
 }
+function updAssist(){
+  const yr=$('upYr').value,g=$('upG').value,tm=$('upTm').value;
+  const sub=$('upSub').value||'';
+  const pt=$('upPart').value==='Paper'?'Paper':'Marking Scheme';
+  const val=`${yr} ${g}-${tm} ${sub} ${pt}`.trim();
+  $('editAssistVal').textContent=val;
+  const set=(id,txt)=>{ const el=$(id);el.textContent=txt;el.classList.toggle('filled',!!txt); };
+  set('eaYear',yr||'Year');set('eaGrade',g||'Grade');set('eaTerm',tm||'Term');
+  set('eaSubject',sub||'Subject');set('eaType',pt);
+}
 function autoT(){
   if(!titleEdited){
     const partLabel=$('upPart').value==='Paper'?'Paper':'Marking Scheme';
     $('upT').value=`${$('upYr').value} ${$('upG').value}-${$('upTm').value} ${$('upSub').value||''} ${partLabel}`.trim();
   }
+  updAssist();
 }
 function openUpload(){
   editId=null;titleEdited=false;
   $('upTitle').textContent='Upload Paper';
   $('upDesc').textContent='Add a past paper or marking scheme to the vault.';
   $('upSave').textContent='Add to Vault';
+  $('editAssist').classList.remove('show');
   $('upG').value='12';$('upTm').value='1';$('upYr').value='2026';
   $('upPart').value='Paper';$('upLink').value='';
   populateSubjects(12);autoT();
@@ -1296,6 +1381,7 @@ $('upSave').addEventListener('click',()=>{
     if(p){p.grade=+$('upG').value;p.term=+$('upTm').value;p.subject=$('upSub').value;p.year=+$('upYr').value;p.type=$('upPart').value;p.link=link;}
     closeUpload();toast('Paper updated.','success');
     updStats();updRecent();if(ST.subject)renderPapers();if($('apOv').classList.contains('open'))renderAPTable();
+    saveDB();
     return;
   }
   const p={id:nextId++,grade:+$('upG').value,stream:'custom',subject:$('upSub').value,term:+$('upTm').value,year:+$('upYr').value,type:$('upPart').value,link,ts:Date.now()};
@@ -1303,8 +1389,35 @@ $('upSave').addEventListener('click',()=>{
   $('upForm').style.display='none';$('okTxt').textContent=`"${$('upT').value}" has been added to the vault.`;$('upOk').classList.add('show');
   toast('Paper uploaded!','success');
   if(ST.subject)renderPapers();if($('apOv').classList.contains('open'))renderAPTable();
+  saveDB();
 });
 $('upAnother').addEventListener('click',openUpload);
+
+/* ═══════════ KV SYNC ═══════════ */
+function showSaveInd(state,msg){
+  const ind=$('saveInd'),dot=$('saveDot'),msgEl=$('saveMsg');
+  dot.className='save-dot'+(state==='saving'?' saving':state==='err'?' err':'');
+  msgEl.textContent=msg;
+  ind.classList.add('show');
+  if(state!=='saving') setTimeout(()=>ind.classList.remove('show'),2800);
+}
+
+async function saveDB(){
+  if(!sessionKey){toast('Not authenticated — changes not saved.','error');return;}
+  showSaveInd('saving','Saving…');
+  try{
+    const r=await fetch('/api/data',{
+      method:'PUT',
+      headers:{'Content-Type':'application/json','Authorization':'Bearer '+sessionKey},
+      body:JSON.stringify(DB)
+    });
+    if(!r.ok){const d=await r.json();throw new Error(d.error||r.status);}
+    showSaveInd('ok','Saved to vault');
+  } catch(e){
+    showSaveInd('err','Save failed: '+e.message);
+    toast('KV save failed: '+e.message,'error');
+  }
+}
 
 /* ═══════════ ADMIN PANEL ═══════════ */
 let apSort={col:'ts',dir:'desc'};
@@ -1420,7 +1533,74 @@ function toast(msg,type='info'){
 }
 
 /* ═══════════ INIT ═══════════ */
-updStats();updRecent();
+async function initApp(){
+  const lo=$('loadOv'),lt=$('loadTxt'),le=$('loadErr');
+
+  try{
+    lt.textContent='Loading papers from vault…';
+    const r=await fetch('/api/data');
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const raw=await r.json();
+    DB=Array.isArray(raw)?raw:[];
+    nextId=DB.length?Math.max(...DB.map(p=>p.id))+1:1;
+  } catch(e){
+    le.textContent='Could not load papers. '+e.message+'. Retrying…';
+    le.style.display='block';
+    // retry once after 3s
+    await new Promise(res=>setTimeout(res,3000));
+    try{
+      const r2=await fetch('/api/data');
+      DB=await r2.json();
+      nextId=DB.length?Math.max(...DB.map(p=>p.id))+1:1;
+      le.style.display='none';
+    } catch(e2){
+      le.textContent='Failed to load papers. Check your connection and refresh.';
+      le.style.display='block';
+      // still hide overlay so site is usable (empty state)
+    }
+  }
+
+  updStats();updRecent();
+
+  // Fade out loading overlay
+  lo.classList.add('fade');
+  setTimeout(()=>lo.classList.add('gone'),450);
+
+  // Read deep-link URL params and auto-navigate
+  (function(){
+  const p=new URLSearchParams(window.location.search);
+  const g=p.get('grade'),s=p.get('stream'),sub=p.get('subject'),yr=p.get('year'),tm=p.get('term');
+  if(!g||!s||!sub)return;
+  const subject=decodeURIComponent(sub);
+  // Activate grade card
+  ST.grade=g;ST.stream=s;ST.subject=subject;
+  document.querySelectorAll('.g-card').forEach(b=>b.classList.toggle('active',b.dataset.g===g));
+  renderStreams(g);renderSubjects(g,s);
+  // Activate subject card
+  document.querySelectorAll('.subj-card').forEach(c=>c.classList.toggle('active',c.dataset.sub===subject));
+  buildYrFilter();
+  if(yr)$('fYear').value=yr;
+  renderPapers();
+  showOnly(s2,s3,s4);
+  updBC();
+  // Scroll to papers after a short delay for render
+  setTimeout(()=>s4.scrollIntoView({behavior:'smooth',block:'start'}),300);
+  })();
+}
+initApp();
 </script>
+
+<!-- LOADING OVERLAY -->
+
+<div class="load-ov" id="loadOv">
+  <div class="load-spinner"></div>
+  <div class="load-text" id="loadTxt">Loading papers…</div>
+  <div class="load-err" id="loadErr"></div>
+</div>
+<!-- SAVE INDICATOR -->
+<div class="save-indicator" id="saveInd">
+  <span class="save-dot" id="saveDot"></span>
+  <span id="saveMsg">Saved</span>
+</div>
 </body>
 </html>
