@@ -1,0 +1,7 @@
+name = "nalanda-paper-vault"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "."
+
+[[kv_namespaces]]
+binding = "VAULT_KV"
+id     = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
