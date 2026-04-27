@@ -1,17 +1,17 @@
 const CORS = {
-‘Content-Type’: ‘application/json’,
-‘Access-Control-Allow-Origin’: ‘*’,
-‘Access-Control-Allow-Methods’: ‘GET, PUT, OPTIONS’,
-‘Access-Control-Allow-Headers’: ‘Content-Type, Authorization’,
+'Content-Type': 'application/json',
+'Access-Control-Allow-Origin': '*',
+'Access-Control-Allow-Methods': 'GET, PUT, OPTIONS',
+'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 };
 
 // GET /api/data  — public, returns the full papers blob
 export async function onRequestGet({ env }) {
 try {
-const raw = await env.VAULT_KV.get(‘data’);
-return new Response(raw || ‘[]’, { headers: CORS });
+const raw = await env.VAULT_KV.get('data');
+return new Response(raw || '[]', { headers: CORS });
 } catch (e) {
-return new Response(JSON.stringify({ error: ‘KV read failed’, detail: e.message }), {
+return new Response(JSON.stringify({ error: 'KV read failed', detail: e.message }), {
 status: 500, headers: CORS,
 });
 }
@@ -21,9 +21,9 @@ status: 500, headers: CORS,
 export async function onRequestPut({ request, env }) {
 try {
 // Verify the session token against the stored adminkey
-const auth  = request.headers.get(‘Authorization’) || ‘’;
-const token = auth.startsWith(’Bearer ’) ? auth.slice(7) : ‘’;
-if (!token) return new Response(JSON.stringify({ error: ‘No token’ }), { status: 401, headers: CORS });
+const auth  = request.headers.get('Authorization') || '';
+const token = auth.startsWith('Bearer ') ? auth.slice(7) : '';
+if (!token) return new Response(JSON.stringify({ error: 'No token' }), { status: 401, headers: CORS });
 
 
 const adminKey = await env.VAULT_KV.get('adminkey');
@@ -40,7 +40,7 @@ return new Response(JSON.stringify({ ok: true }), { headers: CORS });
 
 
 } catch (e) {
-return new Response(JSON.stringify({ error: ‘Save failed’, detail: e.message }), {
+return new Response(JSON.stringify({ error: 'Save failed', detail: e.message }), {
 status: 500, headers: CORS,
 });
 }
