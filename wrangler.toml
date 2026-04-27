@@ -4,4 +4,4 @@ pages_build_output_dir = "."
 
 [[kv_namespaces]]
 binding = "VAULT_KV"
-id     = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+id     = "e0c3ae0c73564dcd89adbc8899324a75"
