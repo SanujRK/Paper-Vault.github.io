@@ -1,52 +1,72 @@
-const CORS = {
+const H = {
 'Content-Type': 'application/json',
 'Access-Control-Allow-Origin': '*',
 'Access-Control-Allow-Methods': 'GET, PUT, OPTIONS',
 'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 };
 
-// GET /api/data  — public, returns the full papers blob
-export async function onRequestGet({ env }) {
+function json(data, status = 200) {
+return new Response(JSON.stringify(data), { status, headers: H });
+}
+
+// GET /api/data  — public
+export async function onRequestGet(context) {
+const { env } = context;
+
+if (!env || !env.VAULT_KV) {
+return json({ error: 'KV binding VAULT_KV not configured in Pages → Settings → Functions.' }, 500);
+}
+
 try {
 const raw = await env.VAULT_KV.get('data');
-return new Response(raw || '[]', { headers: CORS });
+// Return raw string directly so we don't double-encode
+return new Response(raw || '[]', { headers: H });
 } catch (e) {
-return new Response(JSON.stringify({ error: 'KV read failed', detail: e.message }), {
-status: 500, headers: CORS,
-});
+return json({ error: 'KV read failed: ' + e.message }, 500);
 }
 }
 
-// PUT /api/data  — admin only, replaces the full papers blob
-export async function onRequestPut({ request, env }) {
-try {
-// Verify the session token against the stored adminkey
+// PUT /api/data  — admin only
+export async function onRequestPut(context) {
+const { request, env } = context;
+
+if (!env || !env.VAULT_KV) {
+return json({ error: 'KV binding VAULT_KV not configured.' }, 500);
+}
+
+// Auth
 const auth  = request.headers.get('Authorization') || '';
-const token = auth.startsWith('Bearer ') ? auth.slice(7) : '';
-if (!token) return new Response(JSON.stringify({ error: 'No token' }), { status: 401, headers: CORS });
+const token = auth.startsWith('Bearer ') ? auth.slice(7).trim() : '';
+if (!token) return json({ error: 'No Bearer token.' }, 401);
 
-
-const adminKey = await env.VAULT_KV.get('adminkey');
-if (!adminKey || token !== adminKey) {
-  return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: CORS });
-}
-
-// Validate it's real JSON before storing
-const body = await request.text();
-JSON.parse(body); // throws if malformed
-await env.VAULT_KV.put('data', body);
-
-return new Response(JSON.stringify({ ok: true }), { headers: CORS });
-
-
+let adminKey;
+try {
+adminKey = await env.VAULT_KV.get('adminkey');
 } catch (e) {
-return new Response(JSON.stringify({ error: 'Save failed', detail: e.message }), {
-status: 500, headers: CORS,
-});
+return json({ error: 'KV read error: ' + e.message }, 500);
+}
+
+if (!adminKey || token !== adminKey.trim()) {
+return json({ error: 'Unauthorized.' }, 401);
+}
+
+// Validate + save body
+let body;
+try {
+body = await request.text();
+JSON.parse(body); // validate JSON
+} catch (e) {
+return json({ error: 'Invalid JSON body: ' + e.message }, 400);
+}
+
+try {
+await env.VAULT_KV.put('data', body);
+return json({ ok: true });
+} catch (e) {
+return json({ error: 'KV write failed: ' + e.message }, 500);
 }
 }
 
-// OPTIONS — preflight
 export async function onRequestOptions() {
-return new Response(null, { headers: CORS });
+return new Response(null, { headers: H });
 }
