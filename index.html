@@ -1283,20 +1283,25 @@ cOv.addEventListener('click',e=>{if(e.target===cOv)cOv.classList.remove('open');
 async function tryLogin(){
   const key=cIn.value.trim();
   if(!key){cErr.textContent='Please enter the admin code.';return;}
-  cErr.textContent='';cIn.disabled=true;
+  cErr.textContent='Checking…';cIn.disabled=true;
   try{
     const r=await fetch('/api/auth',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key})});
     const d=await r.json();
     if(d.ok){
-      sessionKey=d.token; // store in memory only
+      sessionKey=d.token;
       cOv.classList.remove('open');
       setRole('admin');
       toast('Welcome, Admin!','success');
+    } else if(d.error){
+      // Show the actual server error so config issues are visible
+      cErr.textContent=d.error;
+      cIn.value='';cIn.focus();
     } else {
-      cErr.textContent='Incorrect code.';cIn.classList.add('err');cIn.value='';cIn.focus();
+      cErr.textContent='Incorrect code.';
+      cIn.classList.add('err');cIn.value='';cIn.focus();
     }
   } catch(e){
-    cErr.textContent='Network error. Try again.';
+    cErr.textContent='Network error: '+e.message;
   } finally {
     cIn.disabled=false;
   }
