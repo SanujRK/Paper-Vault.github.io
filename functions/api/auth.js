@@ -1,8 +1,8 @@
 const CORS = {
-‘Content-Type’: ‘application/json’,
-‘Access-Control-Allow-Origin’: ‘*’,
-‘Access-Control-Allow-Methods’: ‘POST, OPTIONS’,
-‘Access-Control-Allow-Headers’: ‘Content-Type’,
+'Content-Type': 'application/json',
+'Access-Control-Allow-Origin': '*',
+'Access-Control-Allow-Methods': 'POST, OPTIONS',
+'Access-Control-Allow-Headers': 'Content-Type',
 };
 
 // POST /api/auth  — verifies admin key server-side, never exposes raw key
@@ -11,8 +11,8 @@ const CORS = {
 export async function onRequestPost({ request, env }) {
 try {
 const { key } = await request.json();
-if (!key || typeof key !== ‘string’) {
-return new Response(JSON.stringify({ ok: false, error: ‘No key provided’ }), {
+if (!key || typeof key !== 'string') {
+return new Response(JSON.stringify({ ok: false, error: 'No key provided' }), {
 status: 400, headers: CORS,
 });
 }
