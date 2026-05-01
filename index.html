@@ -142,6 +142,17 @@
 html{scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s}
 
+/* ── STEP REVEAL ANIMATION ── */
+@keyframes stepReveal{
+  0%{opacity:0;transform:translateY(8px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+.step-reveal{animation:stepReveal .42s cubic-bezier(.2,.7,.3,1) both}
+
+/* ── KEYBOARD FOCUS POLISH ── */
+*:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline-offset:2px}
+
 /* ── NOTICE BAR ── */
 .notice{
   background:var(--maroon-700);
@@ -1076,16 +1087,6 @@ footer{background:var(--maroon-900);padding:44px 24px;color:#fff}
             <label>Year</label>
             <div class="sel-w"><select class="tb-sel" id="fYear"><option value="">All Years</option></select></div>
           </div>
-          <div class="fg">
-            <label>Show</label>
-            <div class="sel-w">
-              <select class="tb-sel" id="fView">
-                <option value="">All</option>
-                <option value="paper">Papers Only</option>
-                <option value="marking">Marking Only</option>
-              </select>
-            </div>
-          </div>
         </div>
       </div>
       <div id="papersList"></div>
@@ -1238,8 +1239,7 @@ footer{background:var(--maroon-900);padding:44px 24px;color:#fff}
           <span class="ea-part" id="eaTerm"></span>
           <span style="color:var(--text3);font-size:13px;align-self:center">·</span>
           <span class="ea-part" id="eaSubject"></span>
-          <span style="color:var(--text3);font-size:13px;align-self:center">·</span>
-          <span class="ea-part" id="eaType"></span>
+          <span class="ea-part" id="eaType" style="display:none"></span>
         </div>
       </div>
       <div class="ff"><label class="fl">Paper Title</label><input class="fi" id="upT" placeholder="Auto-generated"/></div>
@@ -1272,11 +1272,10 @@ footer{background:var(--maroon-900);padding:44px 24px;color:#fff}
         </div>
         <div><label class="fl">Year</label><input class="fi" type="number" id="upYr" value="2026" min="2000" max="2099"/></div>
       </div>
-      <div class="ff">
+      <div class="ff" style="display:none">
         <label class="fl">Type</label>
         <div class="sel-w"><select class="fs" id="upPart">
-          <option value="Paper">Paper</option>
-          <option value="Marking Scheme">Marking Scheme</option>
+          <option value="Paper" selected>Paper</option>
         </select></div>
       </div>
       <div class="ff">
@@ -1380,12 +1379,6 @@ footer{background:var(--maroon-900);padding:44px 24px;color:#fff}
           <option value="12">Grade 12</option><option value="13">Grade 13</option>
         </select>
       </div>
-      <div class="sel-w" style="min-width:110px">
-        <select class="ap-sel" id="apFType"><option value="">All Types</option>
-          <option value="Paper">Paper</option>
-          <option value="Marking Scheme">Marking Scheme</option>
-        </select>
-      </div>
       <div class="sel-w" style="min-width:120px">
         <select class="ap-sel" id="apFMedium"><option value="">All Mediums</option>
           <option value="english">English Medium</option>
@@ -1404,7 +1397,6 @@ footer{background:var(--maroon-900);padding:44px 24px;color:#fff}
           <th class="ap-th sortable" data-col="grade">Grade <span class="sort-ico" id="si-grade">↕</span></th>
           <th class="ap-th sortable" data-col="term">Term <span class="sort-ico" id="si-term">↕</span></th>
           <th class="ap-th sortable" data-col="year">Year <span class="sort-ico" id="si-year">↕</span></th>
-          <th class="ap-th sortable" data-col="type">Type <span class="sort-ico" id="si-type">↕</span></th>
           <th class="ap-th sortable" data-col="medium">Medium <span class="sort-ico" id="si-medium">↕</span></th>
           <th class="ap-th">Link</th>
           <th class="ap-th"></th>
@@ -1518,12 +1510,9 @@ function updStats(){
 function updRecent(){
   const rec=[...DB].sort((a,b)=>b.ts-a.ts).slice(0,5);
   document.getElementById('recentRow').innerHTML=rec.map(p=>{
-    const m=isM(p.type),cls=m?'marking':'paper';
-    const ico=m
-      ?`<svg viewBox="0 0 12 12" fill="none"><path d="M2 2h8v9H2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M4 5h4M4 7h2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>`
-      :`<svg viewBox="0 0 12 12" fill="none"><path d="M2 1h6l2 2v8H2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M7 1v3h3" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>`;
+    const ico=`<svg viewBox="0 0 12 12" fill="none"><path d="M2 1h6l2 2v8H2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M7 1v3h3" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>`;
     const sub=p.subject.length>22?p.subject.slice(0,22)+'…':p.subject;
-    return`<a class="recent-pill" href="#browse"><span class="rp-icon ${cls}">${ico}</span><span class="rp-text"><strong>G${p.grade} ${sub}</strong>${p.year} · T${p.term} · ${p.type}</span></a>`;
+    return`<a class="recent-pill" href="#browse"><span class="rp-icon paper">${ico}</span><span class="rp-text"><strong>G${p.grade} ${sub}</strong>${p.year} · T${p.term}</span></a>`;
   }).join('');
 }
 
@@ -1536,7 +1525,20 @@ const s1=$('s1'),sMed=$('sMed'),s2=$('s2'),s3=$('s3'),s4=$('s4');
 const sg=$('streamGrid'),sj=$('subjGrid'),pl=$('papersList');
 const bc=$('bc'),bcG=$('bcG'),bcS=$('bcS'),bcSub=$('bcSub'),bcSep2=$('bcSep2');
 
-function showOnly(...els){[sMed,s2,s3,s4].forEach(e=>e.style.display='none');els.forEach(e=>{if(e)e.style.display='';});}
+function showOnly(...els){
+  [sMed,s2,s3,s4].forEach(e=>e.style.display='none');
+  els.forEach(e=>{
+    if(!e)return;
+    const wasHidden=e.style.display==='none';
+    e.style.display='';
+    if(wasHidden){
+      e.classList.remove('step-reveal');
+      // restart the animation
+      void e.offsetWidth;
+      e.classList.add('step-reveal');
+    }
+  });
+}
 
 function updBC(){
   if(!ST.grade){bc.style.display='none';return;}
@@ -1568,7 +1570,6 @@ document.querySelectorAll('.g-card').forEach(btn=>{
     ST.grade=btn.dataset.g;ST.medium=null;ST.stream=null;ST.subject=null;
     updMedCounts();
     updBC();showOnly(sMed);
-    requestAnimationFrame(()=>sMed.scrollIntoView({behavior:'smooth',block:'nearest'}));
   });
 });
 
@@ -1596,7 +1597,6 @@ document.querySelectorAll('.med-card').forEach(card=>{
     card.classList.add('active');
     ST.medium=card.dataset.med;ST.stream=null;ST.subject=null;
     updBC();renderStreams(ST.grade);showOnly(sMed,s2);
-    requestAnimationFrame(()=>s2.scrollIntoView({behavior:'smooth',block:'nearest'}));
   });
 });
 
@@ -1620,7 +1620,7 @@ function renderStreams(g){
       c.classList.add('active');
       ST.stream=c.dataset.sid;ST.subject=null;
       updBC();renderSubjects(ST.grade,ST.stream);
-      showOnly(s2,s3);s3.scrollIntoView({behavior:'smooth',block:'nearest'});
+      showOnly(s2,s3);
     });
   });
 }
@@ -1645,7 +1645,6 @@ function renderSubjects(g,sid){
       c.classList.add('active');ST.subject=c.dataset.sub;
       updBC();buildYrFilter();renderPapers();
       showOnly(s2,s3,s4);
-      setTimeout(()=>s4.scrollIntoView({behavior:'smooth',block:'start'}),60);
     });
   });
 }
@@ -1666,11 +1665,9 @@ function renderPapers(){
   if(!ST.subject)return;
   const medBadge=ST.medium?`<span class="med-badge ${ST.medium==='english'?'en':'si'}">${ST.medium==='english'?'English':'සිංහල'}</span>`:'';
   const all=forAll(ST.grade,ST.stream,ST.subject,ST.medium);
-  const fY=$('fYear').value,fV=$('fView').value,admin=role==='admin';
+  const fY=$('fYear').value,admin=role==='admin';
   const fil=all.filter(p=>{
     if(fY&&String(p.year)!==fY)return false;
-    if(fV==='paper'&&isM(p.type))return false;
-    if(fV==='marking'&&!isM(p.type))return false;
     return true;
   });
   const allYrs=[...new Set(all.map(p=>p.year))];
@@ -1679,11 +1676,9 @@ function renderPapers(){
   $('yrRange').textContent=!allYrs.length?'':mn===mx?`· ${mn}`:`· ${mn}–${mx}`;
 
   if(!fil.length){
-    pl.innerHTML=`<div class="empty"><div class="empty-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><h3>No papers found</h3><p>Try changing the year or type filter.</p></div>`;
+    pl.innerHTML=`<div class="empty"><div class="empty-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><h3>No papers found</h3><p>Try changing the year filter.</p></div>`;
     return;
   }
-
-  const twoP=false; // always single paper + marking scheme only
 
   // Build: year → { term → papers[] }
   const byYear={};
@@ -1694,14 +1689,11 @@ function renderPapers(){
   });
   const sortedYears=Object.keys(byYear).map(Number).sort((a,b)=>b-a);
 
-  function ft(arr,type){return arr.find(p=>p.type===type);}
-
-  // Build one download+preview pair
-  function paperBtn(p,label,cls){
-    if(!p)return`<span class="dl-btn bn" style="font-size:11px">Not uploaded</span>`;
+  // Build one download+preview pair for a paper
+  function paperBtn(p){
     const hasLink=p.link&&p.link.trim();
     const dlBtn=hasLink
-      ?`<a class="dl-btn ${cls}" href="${p.link}" target="_blank" rel="noopener noreferrer" style="text-decoration:none">${dlIco()} ${label}</a>`
+      ?`<a class="dl-btn bp" href="${p.link}" target="_blank" rel="noopener noreferrer" style="text-decoration:none">${dlIco()} Download</a>`
       :`<span class="dl-btn bn" style="font-size:11px;cursor:default">No link yet</span>`;
     return`<div class="btn-row">
       ${dlBtn}
@@ -1717,23 +1709,21 @@ function renderPapers(){
     html+=`<div class="yr-divider">
       <span class="yr-divider-num">${yr}</span>
       <span class="yr-divider-line"></span>
-      <span class="yr-divider-cnt">${yrPaperCount} file${yrPaperCount!==1?'s':''}</span>
+      <span class="yr-divider-cnt">${yrPaperCount} paper${yrPaperCount!==1?'s':''}</span>
     </div>`;
 
     terms.forEach(tm=>{
       const papers=byYear[yr][tm];
-      const showP=!fV||fV==='paper',showM=!fV||fV==='marking';
 
       let abar='';
       if(admin){
         abar=`<div class="admin-bar vis">${papers.map(p=>`
-          <button class="aab-btn edit" data-pid="${p.id}">${editIco()} Edit ${p.type}</button>
+          <button class="aab-btn edit" data-pid="${p.id}">${editIco()} Edit</button>
           <button class="aab-btn del" data-pid="${p.id}">${delIco()} Remove</button>`).join('')}</div>`;
       }
 
-      const sp=ft(papers,'Paper'),ms=ft(papers,'Marking Scheme');      let cols='';
-      if(showP) cols+=`<div class="p-col"><div class="col-lbl lp">Paper</div>${paperBtn(sp,'Download','bp')}</div>`;
-      if(showM) cols+=`<div class="p-col"><div class="col-lbl lm">Marking Scheme</div>${paperBtn(ms,'Download','bm')}</div>`;
+      // Render every paper found for this term (usually one)
+      const cols=papers.map(p=>`<div class="p-col"><div class="col-lbl lp">Paper</div>${paperBtn(p)}</div>`).join('');
 
       // Build deep-link URL with all filters pre-applied
       const baseUrl=window.location.href.split('?')[0].split('#')[0];
@@ -1825,15 +1815,14 @@ function wireShareBtns(root){
   });
 }
 
-['fYear','fView'].forEach(id=>$(id).addEventListener('change',()=>{if(ST.subject)renderPapers();}));
+$('fYear').addEventListener('change',()=>{if(ST.subject)renderPapers();});
 
 /* ═══════════ PREVIEW ═══════════ */
 function openPreview(pid){
   const p=DB.find(x=>x.id===pid);if(!p)return;
-  const label=p.type==='Paper'?'Paper':'Marking Scheme';
-  $('prevTitle').textContent=`${p.subject} – ${label}`;
+  $('prevTitle').textContent=`${p.subject} – Paper`;
   $('prevSub').textContent=`Grade ${p.grade} · Term ${p.term} · ${p.year}`;
-  $('prevDocName').textContent=`${p.year} ${p.grade}-${p.term} ${p.subject} ${label}`;
+  $('prevDocName').textContent=`${p.year} ${p.grade}-${p.term} ${p.subject}`;
   const dlBtn=$('prevDlBtn');
   const hasLink=p.link&&p.link.trim();
   if(hasLink){
@@ -1869,7 +1858,18 @@ bcS.addEventListener('click',()=>{
 
 /* ═══════════ SEARCH ═══════════ */
 const sIn=$('searchIn'),sCl=$('searchClr');
-document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==sIn){e.preventDefault();sIn.focus();sIn.scrollIntoView({behavior:'smooth',block:'center'});}});
+document.addEventListener('keydown',e=>{
+  if(e.key==='/'&&document.activeElement!==sIn){e.preventDefault();sIn.focus();sIn.scrollIntoView({behavior:'smooth',block:'center'});}
+  if(e.key==='Escape'){
+    // Close any open modal in priority order
+    const openOv=document.querySelector('.ov.open, .upload-ov.open, [id$="Ov"].open');
+    if(openOv){openOv.classList.remove('open');return;}
+    // Close share popovers
+    document.querySelectorAll('.share-pop.open').forEach(p=>p.classList.remove('open'));
+    // Close role dropdown
+    document.querySelectorAll('.role-dd.open').forEach(p=>p.classList.remove('open'));
+  }
+});
 sCl.addEventListener('click',()=>{sIn.value='';sCl.classList.remove('vis');showOnly();bc.style.display='none';document.querySelectorAll('.g-card').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.med-card').forEach(b=>b.classList.remove('active'));ST={grade:null,medium:null,stream:null,subject:null};});
 document.querySelectorAll('.hints span').forEach(s=>s.addEventListener('click',()=>{sIn.value=s.textContent.trim();sIn.dispatchEvent(new Event('input'));}));
 
@@ -1877,7 +1877,7 @@ sIn.addEventListener('input',function(){
   const q=this.value.trim().toLowerCase();
   sCl.classList.toggle('vis',!!q);
   if(!q)return;
-  const matches=DB.filter(p=>p.subject.toLowerCase().includes(q)||String(p.year).includes(q)||String(p.term).includes(q)||p.type.toLowerCase().includes(q)||`grade ${p.grade}`.includes(q));
+  const matches=DB.filter(p=>p.subject.toLowerCase().includes(q)||String(p.year).includes(q)||String(p.term).includes(q)||`grade ${p.grade}`.includes(q));
   document.querySelectorAll('.g-card').forEach(b=>b.classList.remove('active'));
   ST={grade:null,stream:null,subject:null};bc.style.display='none';
   showOnly(s4);
@@ -1886,7 +1886,6 @@ sIn.addEventListener('input',function(){
   const admin=role==='admin';
   if(!matches.length){pl.innerHTML=`<div class="empty"><div class="empty-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div><h3>No results</h3><p>Try a different search term.</p></div>`;return;}
   pl.innerHTML=matches.map(p=>{
-    const c=isM(p.type)?'bm':'bp';
     return`<div class="yr-divider" style="margin-top:0">
       <span class="yr-divider-num">${p.year}</span>
       <span class="yr-divider-line"></span>
@@ -1895,14 +1894,13 @@ sIn.addEventListener('input',function(){
     <div class="term-group">
       <div class="term-group-hdr">
         <span class="sess-term">${p.subject.length>28?p.subject.slice(0,28)+'…':p.subject}</span>
-        <span class="sess-term" style="background:#f0f4ff;color:#3355aa">${p.type}</span>
       </div>
       <div class="sess-card">
         ${admin?`<div class="admin-bar vis"><button class="aab-btn edit" data-pid="${p.id}">${editIco()} Edit</button><button class="aab-btn del" data-pid="${p.id}">${delIco()} Remove</button></div>`:''}
         <div class="papers-row"><div class="p-col">
-          <div class="col-lbl ${isM(p.type)?'lm':'lp'}">${isM(p.type)?'Marking':'Paper'}</div>
+          <div class="col-lbl lp">Paper</div>
           <div class="btn-row">
-            <button class="dl-btn ${c}" data-pid="${p.id}">${dlIco()} Download</button>
+            ${p.link?`<a class="dl-btn bp" href="${p.link}" target="_blank" rel="noopener noreferrer" style="text-decoration:none">${dlIco()} Download</a>`:`<span class="dl-btn bn" style="font-size:11px;cursor:default">No link yet</span>`}
             <button class="prev-btn" data-pid="${p.id}" title="Preview">${eyeIco()} Preview</button>
           </div>
         </div></div>
@@ -1918,7 +1916,7 @@ sIn.addEventListener('input',function(){
 /* ═══════════ DELETE ═══════════ */
 function openDel(id){
   pendingDel=id;const p=DB.find(x=>x.id===id);
-  if(p)$('confTxt').textContent=`Remove "${p.subject} – ${p.type} (${p.year}, Term ${p.term})" from the vault?`;
+  if(p)$('confTxt').textContent=`Remove "${p.subject} (${p.year}, Term ${p.term})" from the vault?`;
   $('confOv').classList.add('open');
 }
 $('confX').addEventListener('click',()=>{$('confOv').classList.remove('open');pendingDel=null;});
@@ -1950,8 +1948,7 @@ function openEdit(id){
   $('upPart').value=p.type;
   $('upMedium').value=p.medium||'english';
   $('upLink').value=p.link||'';
-  const partLabel=p.type==='Paper'?'Paper':'Marking Scheme';
-  $('upT').value=`${p.year} ${p.grade}-${p.term} ${p.subject} ${partLabel}`;
+  $('upT').value=`${p.year} ${p.grade}-${p.term} ${p.subject}`;
   updAssist();
   $('upOv').classList.add('open');
 }
@@ -2027,24 +2024,22 @@ function populateSubjects(g){
 function updAssist(){
   const yr=$('upYr').value,g=$('upG').value,tm=$('upTm').value;
   const sub=$('upSub').value||'';
-  const pt=$('upPart').value==='Paper'?'Paper':'Marking Scheme';
-  const val=`${yr} ${g}-${tm} ${sub} ${pt}`.trim();
+  const val=`${yr} ${g}-${tm} ${sub}`.trim();
   $('editAssistVal').textContent=val;
   const set=(id,txt)=>{ const el=$(id);el.textContent=txt;el.classList.toggle('filled',!!txt); };
   set('eaYear',yr||'Year');set('eaGrade',g||'Grade');set('eaTerm',tm||'Term');
-  set('eaSubject',sub||'Subject');set('eaType',pt);
+  set('eaSubject',sub||'Subject');
 }
 function autoT(){
   if(!titleEdited){
-    const partLabel=$('upPart').value==='Paper'?'Paper':'Marking Scheme';
-    $('upT').value=`${$('upYr').value} ${$('upG').value}-${$('upTm').value} ${$('upSub').value||''} ${partLabel}`.trim();
+    $('upT').value=`${$('upYr').value} ${$('upG').value}-${$('upTm').value} ${$('upSub').value||''}`.trim();
   }
   updAssist();
 }
 function openUpload(){
   editId=null;titleEdited=false;
   $('upTitle').textContent='Upload Paper';
-  $('upDesc').textContent='Add a past paper or marking scheme to the vault.';
+  $('upDesc').textContent='Add a past paper to the vault.';
   $('upSave').textContent='Add to Vault';
   $('editAssist').classList.remove('show');
   $('upG').value='12';$('upTm').value='1';$('upYr').value='2026';
@@ -2144,7 +2139,7 @@ document.querySelectorAll('.ap-th.sortable').forEach(th=>{
 });
 
 // Filters
-['apSearch','apFGrade','apFType','apFMedium','apFYear'].forEach(id=>{
+['apSearch','apFGrade','apFMedium','apFYear'].forEach(id=>{
   const el=$( id);
   if(el) el.addEventListener(id==='apSearch'?'input':'change', renderAPTable);
 });
@@ -2159,14 +2154,12 @@ function renderAPTable(){
   // Read filters
   const q=($('apSearch').value||'').toLowerCase();
   const fg=$('apFGrade').value;
-  const ft=$('apFType').value;
   const fm=$('apFMedium').value;
   const fy=$('apFYear').value;
 
   let rows=DB.filter(p=>{
     if(q&&!p.subject.toLowerCase().includes(q))return false;
     if(fg&&String(p.grade)!==fg)return false;
-    if(ft&&p.type!==ft)return false;
     if(fm){const pMed=p.medium||'english';if(pMed!==fm)return false;}
     if(fy&&String(p.year)!==fy)return false;
     return true;
@@ -2199,14 +2192,13 @@ function renderAPTable(){
 
   const tbody=$('apBody');
   if(!rows.length){
-    tbody.innerHTML=`<tr><td colspan="8" class="ap-empty">${DB.length?'No papers match your filters.':'No papers uploaded yet.'}</td></tr>`;
+    tbody.innerHTML=`<tr><td colspan="7" class="ap-empty">${DB.length?'No papers match your filters.':'No papers uploaded yet.'}</td></tr>`;
     return;
   }
 
   const linkIco=`<svg width="11" height="11" viewBox="0 0 14 14" fill="none"><path d="M6 3H3a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M9 2h3v3M12 2L7 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
   tbody.innerHTML=rows.map(p=>{
-    const tc=isM(p.type)?'m':'p';
     const hasLink=p.link&&p.link.trim();
     const pMed=p.medium||'english';
     const medCls=pMed==='sinhala'?'si':'en';
@@ -2216,7 +2208,6 @@ function renderAPTable(){
       <td>Gr.&nbsp;${p.grade}</td>
       <td>T${p.term}</td>
       <td>${p.year}</td>
-      <td><span class="tt ${tc}">${typeLabel(p.type)}</span></td>
       <td><span class="med-badge ${medCls}">${medLbl}</span></td>
       <td>${hasLink?`<a href="${p.link}" target="_blank" rel="noopener" class="tt link-yes" style="gap:4px;text-decoration:none">${linkIco} Open</a>`:`<span class="tt link-no">No link</span>`}</td>
       <td><div class="tbl-acts">
@@ -2256,6 +2247,7 @@ async function initApp(){
     if(!r.ok) throw new Error('HTTP '+r.status);
     const raw=await r.json();
     DB=Array.isArray(raw)?raw:[];
+    DB=DB.filter(p=>p.type!=='Marking Scheme'); // marking schemes removed
     nextId=DB.length?Math.max(...DB.map(p=>p.id))+1:1;
   } catch(e){
     // don't show load error text during startup
@@ -2266,6 +2258,7 @@ async function initApp(){
     try{
       const r2=await fetch('/api/data');
       DB=await r2.json();
+      DB=DB.filter(p=>p.type!=='Marking Scheme');
       nextId=DB.length?Math.max(...DB.map(p=>p.id))+1:1;
       le.style.display='none';
     } catch(e2){
