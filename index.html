@@ -1386,6 +1386,12 @@ footer{background:var(--maroon-900);padding:44px 24px;color:#fff}
           <option value="Marking Scheme">Marking Scheme</option>
         </select>
       </div>
+      <div class="sel-w" style="min-width:120px">
+        <select class="ap-sel" id="apFMedium"><option value="">All Mediums</option>
+          <option value="english">English Medium</option>
+          <option value="sinhala">Sinhala Medium</option>
+        </select>
+      </div>
       <div class="sel-w" style="min-width:100px">
         <select class="ap-sel" id="apFYear"><option value="">All Years</option></select>
       </div>
@@ -1399,6 +1405,7 @@ footer{background:var(--maroon-900);padding:44px 24px;color:#fff}
           <th class="ap-th sortable" data-col="term">Term <span class="sort-ico" id="si-term">↕</span></th>
           <th class="ap-th sortable" data-col="year">Year <span class="sort-ico" id="si-year">↕</span></th>
           <th class="ap-th sortable" data-col="type">Type <span class="sort-ico" id="si-type">↕</span></th>
+          <th class="ap-th sortable" data-col="medium">Medium <span class="sort-ico" id="si-medium">↕</span></th>
           <th class="ap-th">Link</th>
           <th class="ap-th"></th>
         </tr>
@@ -1472,20 +1479,26 @@ function paperInStream(p,g,s){
 const forStream=(g,s,med)=>DB.filter(p=>{
   if(p.grade!==+g||!paperInStream(p,g,s))return false;
   if(!med)return true;
-  if(!p.medium)return true;
-  return p.medium===med;
+  const pMed=p.medium||'english';
+  return pMed===med;
 }).length;
 const forSubj=(g,s,sub,med)=>DB.filter(p=>{
   if(p.grade!==+g||p.subject!==sub||!paperInStream(p,g,s))return false;
   if(!med)return true;
-  if(!p.medium)return true;
-  return p.medium===med;
+  const pMed=p.medium||'english';
+  return pMed===med;
+}).length;
+// Count papers for a grade in a specific medium (for medium card counts)
+const forGradeMed=(g,med)=>DB.filter(p=>{
+  if(p.grade!==+g)return false;
+  const pMed=p.medium||'english';
+  return pMed===med;
 }).length;
 const forAll=(g,s,sub,med)=>DB.filter(p=>{
   if(p.grade!==+g||p.subject!==sub||!paperInStream(p,g,s))return false;
   if(!med)return true; // no medium filter
-  if(!p.medium)return true; // old papers without medium field show everywhere
-  return p.medium===med;
+  const pMed=p.medium||'english'; // untagged papers treated as English
+  return pMed===med;
 });
 
 /* ═══════════ STATS ═══════════ */
@@ -1553,10 +1566,22 @@ document.querySelectorAll('.g-card').forEach(btn=>{
     }
     btn.classList.add('active');
     ST.grade=btn.dataset.g;ST.medium=null;ST.stream=null;ST.subject=null;
+    updMedCounts();
     updBC();showOnly(sMed);
     requestAnimationFrame(()=>sMed.scrollIntoView({behavior:'smooth',block:'nearest'}));
   });
 });
+
+/* Update paper counts shown on the English / Sinhala medium cards */
+function updMedCounts(){
+  if(!ST.grade)return;
+  const en=forGradeMed(ST.grade,'english');
+  const si=forGradeMed(ST.grade,'sinhala');
+  const enCard=document.querySelector('.med-card[data-med="english"] .med-card-sub');
+  const siCard=document.querySelector('.med-card[data-med="sinhala"] .med-card-sub');
+  if(enCard)enCard.textContent=en+' paper'+(en!==1?'s':'')+' available';
+  if(siCard)siCard.textContent=si+' paper'+(si!==1?'s':'')+' available';
+}
 
 /* ═══════════ MEDIUM ═══════════ */
 document.querySelectorAll('.med-card').forEach(card=>{
@@ -2119,7 +2144,7 @@ document.querySelectorAll('.ap-th.sortable').forEach(th=>{
 });
 
 // Filters
-['apSearch','apFGrade','apFType','apFYear'].forEach(id=>{
+['apSearch','apFGrade','apFType','apFMedium','apFYear'].forEach(id=>{
   const el=$( id);
   if(el) el.addEventListener(id==='apSearch'?'input':'change', renderAPTable);
 });
@@ -2135,12 +2160,14 @@ function renderAPTable(){
   const q=($('apSearch').value||'').toLowerCase();
   const fg=$('apFGrade').value;
   const ft=$('apFType').value;
+  const fm=$('apFMedium').value;
   const fy=$('apFYear').value;
 
   let rows=DB.filter(p=>{
     if(q&&!p.subject.toLowerCase().includes(q))return false;
     if(fg&&String(p.grade)!==fg)return false;
     if(ft&&p.type!==ft)return false;
+    if(fm){const pMed=p.medium||'english';if(pMed!==fm)return false;}
     if(fy&&String(p.year)!==fy)return false;
     return true;
   });
@@ -2148,7 +2175,8 @@ function renderAPTable(){
   // Sort
   const col=apSort.col,dir=apSort.dir;
   rows.sort((a,b)=>{
-    let av=a[col],bv=b[col];
+    let av=col==='medium'?(a.medium||'english'):a[col];
+    let bv=col==='medium'?(b.medium||'english'):b[col];
     if(typeof av==='string')av=av.toLowerCase(),bv=bv.toLowerCase();
     if(av<bv)return dir==='asc'?-1:1;
     if(av>bv)return dir==='asc'?1:-1;
@@ -2171,7 +2199,7 @@ function renderAPTable(){
 
   const tbody=$('apBody');
   if(!rows.length){
-    tbody.innerHTML=`<tr><td colspan="7" class="ap-empty">${DB.length?'No papers match your filters.':'No papers uploaded yet.'}</td></tr>`;
+    tbody.innerHTML=`<tr><td colspan="8" class="ap-empty">${DB.length?'No papers match your filters.':'No papers uploaded yet.'}</td></tr>`;
     return;
   }
 
@@ -2180,12 +2208,16 @@ function renderAPTable(){
   tbody.innerHTML=rows.map(p=>{
     const tc=isM(p.type)?'m':'p';
     const hasLink=p.link&&p.link.trim();
+    const pMed=p.medium||'english';
+    const medCls=pMed==='sinhala'?'si':'en';
+    const medLbl=pMed==='sinhala'?'සිං':'EN';
     return`<tr>
       <td style="max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p.subject}">${p.subject}</td>
       <td>Gr.&nbsp;${p.grade}</td>
       <td>T${p.term}</td>
       <td>${p.year}</td>
       <td><span class="tt ${tc}">${typeLabel(p.type)}</span></td>
+      <td><span class="med-badge ${medCls}">${medLbl}</span></td>
       <td>${hasLink?`<a href="${p.link}" target="_blank" rel="noopener" class="tt link-yes" style="gap:4px;text-decoration:none">${linkIco} Open</a>`:`<span class="tt link-no">No link</span>`}</td>
       <td><div class="tbl-acts">
         <button class="tbl-btn e" data-pid="${p.id}" title="Edit">${editIco()}</button>
