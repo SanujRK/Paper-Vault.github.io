@@ -1469,8 +1469,18 @@ function paperInStream(p,g,s){
   }
   return false;
 }
-const forStream=(g,s)=>DB.filter(p=>p.grade===+g&&paperInStream(p,g,s)).length;
-const forSubj=(g,s,sub)=>DB.filter(p=>p.grade===+g&&p.subject===sub&&paperInStream(p,g,s)).length;
+const forStream=(g,s,med)=>DB.filter(p=>{
+  if(p.grade!==+g||!paperInStream(p,g,s))return false;
+  if(!med)return true;
+  if(!p.medium)return true;
+  return p.medium===med;
+}).length;
+const forSubj=(g,s,sub,med)=>DB.filter(p=>{
+  if(p.grade!==+g||p.subject!==sub||!paperInStream(p,g,s))return false;
+  if(!med)return true;
+  if(!p.medium)return true;
+  return p.medium===med;
+}).length;
 const forAll=(g,s,sub,med)=>DB.filter(p=>{
   if(p.grade!==+g||p.subject!==sub||!paperInStream(p,g,s))return false;
   if(!med)return true; // no medium filter
@@ -1568,7 +1578,7 @@ document.querySelectorAll('.med-card').forEach(card=>{
 /* ═══════════ STREAMS ═══════════ */
 function renderStreams(g){
   sg.innerHTML=CUR[ck(g)].streams.map(s=>{
-    const c=forStream(g,s.id);
+    const c=forStream(g,s.id,ST.medium);
     return`<div class="stream-card" data-sid="${s.id}">
       <div class="sc-tag">${s.tag}</div><div class="sc-name">${s.name}</div>
       <div class="sc-cnt">${c?c+' paper'+(c>1?'s':''):'No papers yet'}</div></div>`;
@@ -1594,7 +1604,7 @@ function renderStreams(g){
 function renderSubjects(g,sid){
   const str=CUR[ck(g)].streams.find(s=>s.id===sid);if(!str)return;
   sj.innerHTML=str.subjects.map(sub=>{
-    const c=forSubj(g,sid,sub);
+    const c=forSubj(g,sid,sub,ST.medium);
     return`<div class="subj-card" data-sub="${sub}">
       <span class="subj-name">${sub}</span><span class="subj-cnt">${c||'–'}</span></div>`;
   }).join('');
@@ -1629,6 +1639,7 @@ const delIco=()=>`<svg viewBox="0 0 14 14" fill="none"><path d="M2 4h10M5 4V2.5h
 
 function renderPapers(){
   if(!ST.subject)return;
+  const medBadge=ST.medium?`<span class="med-badge ${ST.medium==='english'?'en':'si'}">${ST.medium==='english'?'English':'සිංහල'}</span>`:'';
   const all=forAll(ST.grade,ST.stream,ST.subject,ST.medium);
   const fY=$('fYear').value,fV=$('fView').value,admin=role==='admin';
   const fil=all.filter(p=>{
